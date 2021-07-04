@@ -1,0 +1,99 @@
+,portfolios
+0.0,"Empty DataFrame
+Columns: [Expexted Returns, Real Returns, Weights]
+Index: []"
+0.1,"Empty DataFrame
+Columns: [Expexted Returns, Real Returns, Weights]
+Index: []"
+0.2,"Empty DataFrame
+Columns: [Expexted Returns, Real Returns, Weights]
+Index: []"
+0.30000000000000004,"Empty DataFrame
+Columns: [Expexted Returns, Real Returns, Weights]
+Index: []"
+0.4,"Empty DataFrame
+Columns: [Expexted Returns, Real Returns, Weights]
+Index: []"
+0.5,"Empty DataFrame
+Columns: [Expexted Returns, Real Returns, Weights]
+Index: []"
+0.6000000000000001,"              Expexted Returns  Real Returns   Weights
+EURUSD_2min           0.001370      0.000742  0.017351
+EURUSD_3min           0.003710      0.004929  0.046974
+EURUSD_4min           0.004959      0.001432  0.062790
+GBPUSD_4min           0.000525           NaN  0.006653
+USDJPY_4min           0.000114           NaN  0.001442
+EURUSD_5min           0.005214      0.002272  0.066015
+GBPUSD_5min           0.001889           NaN  0.023917
+USDJPY_5min           0.001474           NaN  0.018661
+EURUSD_6min           0.005311      0.006424  0.067248
+GBPUSD_6min           0.003166      0.001393  0.040091
+USDJPY_6min           0.001964      0.005138  0.024869
+EURUSD_7min           0.005131      0.007590  0.064967
+GBPUSD_7min           0.003846      0.008434  0.048702
+USDJPY_7min           0.002190      0.002695  0.027725
+EURUSD_8min           0.004887      0.005173  0.061882
+GBPUSD_8min           0.004225      0.000128  0.053500
+USDJPY_8min           0.002301      0.004123  0.029135
+EURUSD_9min           0.005365      0.005827  0.067925
+GBPUSD_9min           0.005258      0.004862  0.066574
+USDJPY_9min           0.003326      0.004876  0.042110
+EURUSD_10min          0.005013      0.006489  0.063474
+GBPUSD_10min          0.004784      0.005724  0.060572
+USDJPY_10min          0.002956      0.003450  0.037426"
+0.7000000000000001,"              Expexted Returns  Real Returns   Weights
+EURUSD_1min           0.018160      0.016424  0.026478
+GBPUSD_1min           0.001529           NaN  0.002230
+EURUSD_2min           0.020491      0.021862  0.029878
+GBPUSD_2min           0.016853      0.021311  0.024573
+USDJPY_2min           0.009478      0.008593  0.013820
+...                        ...           ...       ...
+USDCHF_10min          0.006567      0.007042  0.009575
+USDCNH_10min          0.001809      0.001784  0.002637
+USDDKK_10min          0.006372      0.006450  0.009290
+USDJPY_10min          0.011477      0.010640  0.016735
+USDMXN_10min          0.021929      0.018645  0.031974
+
+[69 rows x 3 columns]"
+0.8,"              Expexted Returns  Real Returns   Weights
+EURUSD_1min           0.044613      0.044543  0.020475
+GBPUSD_1min           0.041212      0.041619  0.018914
+USDJPY_1min           0.022596      0.022477  0.010370
+AUDUSD_2min           0.001534           NaN  0.000704
+EURUSD_2min           0.039977      0.040470  0.018347
+...                        ...           ...       ...
+USDSGD_10min          0.001364      0.002971  0.000626
+USDZAR_10min          0.017723      0.022901  0.008134
+USDSGD_6min                NaN      0.000930       NaN
+USDHUF_8min                NaN      0.002391       NaN
+USDPLN_9min                NaN      0.001938       NaN
+
+[115 rows x 3 columns]"
+0.9,"              Expexted Returns  Real Returns   Weights
+AUDUSD_1min           0.009775      0.008242  0.002032
+EURUSD_1min           0.071754      0.071221  0.014916
+GBPUSD_1min           0.082468      0.081831  0.017143
+USDCAD_1min           0.019094      0.017702  0.003969
+USDCHF_1min           0.012170      0.012631  0.002530
+...                        ...           ...       ...
+USDNOK_10min          0.036778      0.042394  0.007645
+USDPLN_10min          0.020833      0.026477  0.004331
+USDSEK_10min          0.023803      0.026074  0.004948
+USDSGD_10min          0.008974      0.011087  0.001865
+USDZAR_10min          0.048220      0.053537  0.010024
+
+[147 rows x 3 columns]"
+1.0,"              Expexted Returns  Real Returns   Weights
+AUDUSD_1min           0.052214      0.052211  0.006175
+EURUSD_1min           0.099459      0.099456  0.011762
+GBPUSD_1min           0.125116      0.125098  0.014796
+NZDUSD_1min           0.044660      0.044656  0.005281
+USDCAD_1min           0.052560      0.052557  0.006216
+...                        ...           ...       ...
+USDNOK_10min          0.059624      0.059612  0.007051
+USDPLN_10min          0.040638      0.040628  0.004806
+USDSEK_10min          0.038210      0.038204  0.004519
+USDSGD_10min          0.016179      0.016178  0.001913
+USDZAR_10min          0.077823      0.077797  0.009203
+
+[170 rows x 3 columns]"
