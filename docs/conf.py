@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('..\\src\\'))
 # -- Project information -----------------------------------------------------
 
 project = 'FX-Manager'
-copyright = 'Copyright © 2021 Abdullah Bahi'
+copyright = '2021 Abdullah Bahi'
 author = 'Abdullah Bahi'
 
 # The full version, including alpha/beta/rc tags
