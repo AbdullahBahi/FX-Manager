@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fxmanager.simulation package &mdash; FX-Manager 1.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fxmanager.strategies package" href="fxmanager.strategies.html" />
+    <link rel="prev" title="fxmanager.optimization package" href="fxmanager.optimization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FX-Manager
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fxmanager</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fxmanager.html">fxmanager package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="fxmanager.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.basic.html">fxmanager.basic package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.dwx.html">fxmanager.dwx package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.optimization.html">fxmanager.optimization package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">fxmanager.simulation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.strategies.html">fxmanager.strategies package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fxmanager.html#module-fxmanager">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FX-Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">fxmanager</a> &raquo;</li>
+          <li><a href="fxmanager.html">fxmanager package</a> &raquo;</li>
+      <li>fxmanager.simulation package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fxmanager.simulation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="fxmanager-simulation-package">
+<h1>fxmanager.simulation package<a class="headerlink" href="#fxmanager-simulation-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-fxmanager.simulation.historic">
+<span id="fxmanager-simulation-historic-module"></span><h2>fxmanager.simulation.historic module<a class="headerlink" href="#module-fxmanager.simulation.historic" title="Permalink to this headline"></a></h2>
+<p>This module contains helper functions used internally in this module and a public function to run historical simulation.</p>
+<dl class="simple">
+<dt>Public Functions:</dt><dd><ul class="simple">
+<li><p>run(): starts trading simulation with historic prices.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.historic.close_position">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.historic.</span></span><span class="sig-name descname"><span class="pre">close_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolio_prices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolio_orders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">losses</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.historic.close_position" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.historic.run()’ function. closes an opened position by ticket.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>portfolio_orders: pandas dataframe with history of closed positions. Each row represents a closed position.</p></li>
+<li><p>wins            : integer indicating number of closed positions with positive profit.</p></li>
+<li><p>losses          : integer indicating number of closed positions with nigative profit.</p></li>
+<li><p>win_rate        : float indicating percentage of wins to (wins+losses).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.historic.get_prices">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.historic.</span></span><span class="sig-name descname"><span class="pre">get_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_pair</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.historic.get_prices" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.historic.run()’ function. gets the bid/ask prices of the given currency_pair &amp; time_frame in the selected day from the ‘data_dirtime_frames’ directory.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>day           : integer indicating day number - starts from 0 and ends with the total number of work days in the dataset (num_days-1).</p></li>
+<li><p>data_dir      : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>time_frame    : a string of the timeframe from wich the prices is read.</p></li>
+<li><p>currency_pair : a string of the currency pair from wich the prices is read.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>df: pandas dataframe of the bid &amp; ask prices with columns (ask_open, bid_open, ask_close, bid_close, tick_volume) and a datetime index from the begining to the end off the day with frequency equal to time_frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.historic.print_final_state">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.historic.</span></span><span class="sig-name descname"><span class="pre">print_final_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.historic.print_final_state" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.historic.run()’ function. prints the final state of the portfolio after the simulation is finished.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.historic.run">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.historic.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_logs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.historic.run" title="Permalink to this definition"></a></dt>
+<dd><p>starts trading simulation with historic prices.</p>
+<dl class="simple">
+<dt>Args: </dt><dd><ul class="simple">
+<li><p>account               : account object with all account information.</p></li>
+<li><p>strategy              : strategy object with the trading strategy information.</p></li>
+<li><p>data_dir              : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>portfolios            : pandas dataframe with columns (currency_pairs, time_frames, weights) and range index of length = num_days</p></li>
+<li><p>risk_factor           : a float with range from 0 to 1 indicating the percentage of reinvested balance.</p></li>
+<li><p>save_logs             : boolean flag, if the program logs are saved to ‘data_dirlogslive_simulation_logs.txt’ file.</p></li>
+<li><p>kwargs                : dictionary to hold any number of arguments required for the strategy object.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>None</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fxmanager.simulation.live">
+<span id="fxmanager-simulation-live-module"></span><h2>fxmanager.simulation.live module<a class="headerlink" href="#module-fxmanager.simulation.live" title="Permalink to this headline"></a></h2>
+<p>This module contains helper functions used internally in this module and a public function to run live simulation with live price feed from MT4.</p>
+<dl class="simple">
+<dt>Public Functions:</dt><dd><ul class="simple">
+<li><p>run(): starts trading simulation with live prices from MT4 EA.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.live.close_position">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.live.</span></span><span class="sig-name descname"><span class="pre">close_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ticket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolio_prices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolio_orders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">losses</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.live.close_position" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.live.run()’ function. closes an opened position by ticket.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>portfolio_orders: pandas dataframe with history of closed positions. Each row represents a closed position.</p></li>
+<li><p>wins            : integer indicating number of closed positions with positive profit.</p></li>
+<li><p>losses          : integer indicating number of closed positions with nigative profit.</p></li>
+<li><p>win_rate        : float indicating percentage of wins to (wins+losses).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.live.get_price">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.live.</span></span><span class="sig-name descname"><span class="pre">get_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency_pairs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price_feed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sleep_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.live.get_price" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.live.run()’ function. gets the current prices of portfolio assets from price feed.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>price_every_iter_df: pandas dataframe with length = 1 and (4* number of currency pairs) columns. Each asset has 4 columns as follows, (000000_bid_open, 000000_ask_open, 000000_bid_close, 000000_ask_close) where 000000 is replaced with currency pair symbol.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.live.optimize_portfolio">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.live.</span></span><span class="sig-name descname"><span class="pre">optimize_portfolio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data_format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimization_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimization_objective</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_optimization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_preprocessed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.live.optimize_portfolio" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.live.run()’ function. Does portfolio optimization using data from previous day. The constructed portfolio is used for live simulation.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>portfolio     : dictionary with keys (‘currency_pairs’, ‘time_frames’, ‘weights’, ‘optimized_n’, ‘optimized_W_R’, ‘optimized_R_R’)</p></li>
+<li><p>currency_pairs: list with portfolio currency pairs.</p></li>
+<li><p>time_frames   : list with portfolio timeframes.</p></li>
+<li><p>weights       : list with portfolio weights.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.live.print_final_state">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.live.</span></span><span class="sig-name descname"><span class="pre">print_final_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.live.print_final_state" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.live.run()’ function. prints the final state of the portfolio after the simulation is finished.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.live.print_live_state">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.live.</span></span><span class="sig-name descname"><span class="pre">print_live_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.live.print_live_state" title="Permalink to this definition"></a></dt>
+<dd><p>helper function to ‘fxmanager.simulation.live.run()’ function. prints the current state of the portfolio.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.simulation.live.run">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.simulation.live.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">construct_portfolio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_optimization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_preprocessed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimization_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimization_objective</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sleep_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_zero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_logs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.simulation.live.run" title="Permalink to this definition"></a></dt>
+<dd><p>starts trading simulation with live prices from MT4 EA.</p>
+<dl class="simple">
+<dt>Args: </dt><dd><ul class="simple">
+<li><p>account               : account object with all account information.</p></li>
+<li><p>strategy              : strategy object with the trading strategy information.</p></li>
+<li><p>data_dir              : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>construct_portfolio   : boolean indicating whether portfolio optimization is used or not.</p></li>
+<li><p>portfolio             : dictionary with the portfolio to be used for trading, keys are: (currency_pairs, time_frames, weights). This argument is only used if ‘construct_portfolio’ is set to False.</p></li>
+<li><p>weight_optimization   : boolean indicating whether weight optimization is used in portfolio optimization. This argument is only used when ‘construct_portfolio’ is set to True.</p></li>
+<li><p>is_preprocessed       : boolean indicating if the data of used for portfolio optimization is preprocessed or not. This argument is only used when ‘construct_portfolio’ is set to True.</p></li>
+<li><p>raw_data_format       : dictionary with information about raw data used for portfolio optimization. This argument is only used when ‘construct_portfolio’ is set to True.</p></li>
+<li><p>optimization_method   : string with optimization method to be used. This argument is only used when ‘construct_portfolio’ is set to True.</p></li>
+<li><p>optimization_objective: string with optimization objective to be used. This argument is only used when ‘construct_portfolio’ is set to True.</p></li>
+<li><p>sleep_time            : integer indicating the time every which the portfolio is updated (in seconds).</p></li>
+<li><p>risk_factor           : a float with range from 0 to 1 indicating the percentage of reinvested balance.</p></li>
+<li><p>sync_zero             : boolean flag, if True, the simulation starts when the seconds in current time = 0.</p></li>
+<li><p>save_logs             : boolean flag, if the program logs are saved to ‘data_dirlogslive_simulation_logs.txt’ file.</p></li>
+<li><p>kwargs                : dictionary to hold any number of arguments required for the strategy object.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>None</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fxmanager.simulation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fxmanager.simulation" title="Permalink to this headline"></a></h2>
+<p>This sub-package contains the modules used for historical and live trading sumulations.</p>
+<dl class="simple">
+<dt>Modules:</dt><dd><ul class="simple">
+<li><p>historic: This module contains helper functions used internally in this module and a public function to run historical simulation.</p></li>
+<li><p>live    : This module contains helper functions used internally in this module and a public function to run live simulation with live price feed from MT4.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fxmanager.optimization.html" class="btn btn-neutral float-left" title="fxmanager.optimization package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fxmanager.strategies.html" class="btn btn-neutral float-right" title="fxmanager.strategies package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright © 2021 Abdullah Bahi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

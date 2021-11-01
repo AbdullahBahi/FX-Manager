@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module fxmanager.strategies.template</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="fxmanager.html"><font color="#ffffff">fxmanager</font></a>.<a href="fxmanager.strategies.html"><font color="#ffffff">strategies</font></a>.template</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Calgotrading%5Cfxmanager%5Csrc%5Cfxmanager%5Cstrategies%5Ctemplate.py">c:\algotrading\fxmanager\src\fxmanager\strategies\template.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;contains&nbsp;a&nbsp;class&nbsp;that&nbsp;is&nbsp;used&nbsp;by&nbsp;user&nbsp;to&nbsp;create&nbsp;a&nbsp;strategy&nbsp;<a href="builtins.html#object">object</a>&nbsp;which&nbsp;is&nbsp;passed&nbsp;to&nbsp;fxmanager's&nbsp;built-in&nbsp;live&nbsp;and&nbsp;historical&nbsp;simulators.<br>
+&nbsp;<br>
+Public&nbsp;Classes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#strategy_template">strategy_template</a>:&nbsp;Class&nbsp;for&nbsp;injecting&nbsp;user&nbsp;defined&nbsp;trading&nbsp;strategies&nbsp;into&nbsp;fxmanager's&nbsp;built-in&nbsp;live&nbsp;and&nbsp;historical&nbsp;simulators.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="fxmanager._metadata.html">fxmanager._metadata</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="fxmanager.strategies.template.html#strategy_template">strategy_template</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="strategy_template">class <strong>strategy_template</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#strategy_template">strategy_template</a>(strategy,&nbsp;take_all_prices=False)<br>
+&nbsp;<br>
+Class&nbsp;for&nbsp;injecting&nbsp;user&nbsp;defined&nbsp;trading&nbsp;strategies&nbsp;into&nbsp;fxmanager's&nbsp;built-in&nbsp;live&nbsp;and&nbsp;historical&nbsp;simulators.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;strategy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;reference&nbsp;to&nbsp;a&nbsp;user&nbsp;defined&nbsp;function&nbsp;for&nbsp;some&nbsp;trading&nbsp;strategy.&nbsp;The&nbsp;function&nbsp;MUST&nbsp;be&nbsp;structured&nbsp;as&nbsp;follows&nbsp;in&nbsp;order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;the&nbsp;simulation&nbsp;to&nbsp;work&nbsp;proberly:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;takes&nbsp;ONLY&nbsp;ONE&nbsp;positional&nbsp;argument&nbsp;called&nbsp;'prices'.&nbsp;This&nbsp;argument&nbsp;is&nbsp;a&nbsp;pandas&nbsp;DataFrame&nbsp;with&nbsp;range&nbsp;index&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;following&nbsp;columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ask_open:&nbsp;open&nbsp;ask&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bid_open:&nbsp;open&nbsp;bid&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ask_close:&nbsp;close&nbsp;ask&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bid_close:&nbsp;close&nbsp;bid&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;takes&nbsp;**kwargs&nbsp;for&nbsp;any&nbsp;other&nbsp;keword&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;returns&nbsp;a&nbsp;pandas&nbsp;DataFrame&nbsp;with&nbsp;ONE&nbsp;RAW&nbsp;and&nbsp;the&nbsp;following&nbsp;columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;order_type:&nbsp;can&nbsp;be&nbsp;one&nbsp;of&nbsp;3&nbsp;values&nbsp;(buy,&nbsp;sell,&nbsp;hold)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;SL&nbsp;:&nbsp;stop&nbsp;loss.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;TP&nbsp;:&nbsp;take&nbsp;profit.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;take_all_prices:&nbsp;boolean&nbsp;that&nbsp;controls&nbsp;the&nbsp;frequency&nbsp;of&nbsp;the&nbsp;range&nbsp;index&nbsp;of&nbsp;'prices'&nbsp;DataFrame.&nbsp;If&nbsp;True:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all&nbsp;the&nbsp;prices&nbsp;history&nbsp;since&nbsp;the&nbsp;begining&nbsp;of&nbsp;the&nbsp;day&nbsp;is&nbsp;passed&nbsp;to&nbsp;the&nbsp;strategy&nbsp;function,&nbsp;the&nbsp;index&nbsp;is&nbsp;a&nbsp;normal&nbsp;range<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;(0,&nbsp;1,&nbsp;2,&nbsp;...).&nbsp;the&nbsp;time&nbsp;difference&nbsp;between&nbsp;every&nbsp;reading&nbsp;is&nbsp;determined&nbsp;by&nbsp;the&nbsp;'sleep_time'&nbsp;argument&nbsp;in&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fxmanager.simulation.live.run()'&nbsp;or&nbsp;'fxmanager.simulation.historic.run()'&nbsp;functions.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;False:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;frequncy&nbsp;of&nbsp;the&nbsp;prices&nbsp;becomes&nbsp;dependant&nbsp;on&nbsp;the&nbsp;time&nbsp;frame&nbsp;in&nbsp;which&nbsp;we&nbsp;want&nbsp;to&nbsp;generate&nbsp;an&nbsp;order,&nbsp;for&nbsp;examble,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;we&nbsp;want&nbsp;to&nbsp;open&nbsp;a&nbsp;position&nbsp;in&nbsp;'EURUSD'&nbsp;in&nbsp;the&nbsp;'5min'&nbsp;time&nbsp;frame,&nbsp;the&nbsp;index&nbsp;will&nbsp;become&nbsp;(0,&nbsp;5,&nbsp;10,&nbsp;..).<br>
+Methods:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;get_orders:&nbsp;used&nbsp;in&nbsp;'fxmanager.simulation.live.run()'&nbsp;and&nbsp;'fxmanager.simulation.historic.run()'&nbsp;functions.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="strategy_template-__init__"><strong>__init__</strong></a>(self, strategy, take_all_prices=False)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="strategy_template-get_orders"><strong>get_orders</strong></a>(self, prices, **kwargs)</dt></dl>
+
+<dl><dt><a name="strategy_template-get_portfolios_template"><strong>get_portfolios_template</strong></a>()</dt><dd><tt>returns&nbsp;a&nbsp;list&nbsp;of&nbsp;dictionaries&nbsp;of&nbsp;length&nbsp;=&nbsp;num_days&nbsp;where&nbsp;each&nbsp;dictionary&nbsp;is&nbsp;a&nbsp;portfolio&nbsp;used&nbsp;for&nbsp;a&nbsp;given&nbsp;day.</tt></dd></dl>
+
+<dl><dt><a name="strategy_template-kwargs_template"><strong>kwargs_template</strong></a>()</dt><dd><tt>returns&nbsp;a&nbsp;template&nbsp;dictionary&nbsp;for&nbsp;keyword&nbsp;args&nbsp;used&nbsp;in&nbsp;used&nbsp;defined&nbsp;strategies.</tt></dd></dl>
+
+<dl><dt><a name="strategy_template-template"><strong>template</strong></a>(prices, **kwargs)</dt><dd><tt>function&nbsp;template&nbsp;for&nbsp;the&nbsp;user&nbsp;to&nbsp;build&nbsp;trading&nbsp;strategies.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;prices:&nbsp;pandas&nbsp;DataFrame&nbsp;with&nbsp;range&nbsp;index&nbsp;and&nbsp;the&nbsp;following&nbsp;columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ask_open:&nbsp;open&nbsp;ask&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bid_open:&nbsp;open&nbsp;bid&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ask_close:&nbsp;close&nbsp;ask&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;bid_close:&nbsp;close&nbsp;bid&nbsp;price&nbsp;of&nbsp;the&nbsp;candle&nbsp;stick.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;kwargs:&nbsp;special&nbsp;dictionary&nbsp;to&nbsp;hold&nbsp;any&nbsp;number&nbsp;of&nbsp;required&nbsp;arguments&nbsp;for&nbsp;the&nbsp;function.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;orders:&nbsp;pandas&nbsp;DataFrame&nbsp;with&nbsp;ONE&nbsp;RAW&nbsp;and&nbsp;the&nbsp;following&nbsp;columns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;order_type:&nbsp;can&nbsp;be&nbsp;one&nbsp;of&nbsp;3&nbsp;values&nbsp;(buy,&nbsp;sell,&nbsp;hold)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;SL&nbsp;:&nbsp;stop&nbsp;loss.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;TP&nbsp;:&nbsp;take&nbsp;profit.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__dict__</strong> = {'__builtins__': {'ArithmeticError': &lt;class 'ArithmeticError'&gt;, 'AssertionError': &lt;class 'AssertionError'&gt;, 'AttributeError': &lt;class 'AttributeError'&gt;, 'BaseException': &lt;class 'BaseException'&gt;, 'BlockingIOError': &lt;class 'BlockingIOError'&gt;, 'BrokenPipeError': &lt;class 'BrokenPipeError'&gt;, 'BufferError': &lt;class 'BufferError'&gt;, 'BytesWarning': &lt;class 'BytesWarning'&gt;, 'ChildProcessError': &lt;class 'ChildProcessError'&gt;, 'ConnectionAbortedError': &lt;class 'ConnectionAbortedError'&gt;, ...}, '__cached__': r'C:\algoTrading\fxmanager\src\fxmanager\strategies\__pycache__\template.cpython-37.pyc', '__dict__': {'Doc': &lt;class '__main__.Doc'&gt;, 'ErrorDuringImport': &lt;class '__main__.ErrorDuringImport'&gt;, 'HTMLDoc': &lt;class '__main__.HTMLDoc'&gt;, 'HTMLRepr': &lt;class '__main__.HTMLRepr'&gt;, 'Helper': &lt;class '__main__.Helper'&gt;, 'ModuleScanner': &lt;class '__main__.ModuleScanner'&gt;, 'Repr': &lt;class 'reprlib.Repr'&gt;, 'TextDoc': &lt;class '__main__.TextDoc'&gt;, 'TextRepr': &lt;class '__main__.TextRepr'&gt;, '_PlainTextDoc': &lt;class '__main__._PlainTextDoc'&gt;, ...}, '__doc__': "<font color="#c040c0">\n</font>This module contains a class that is used by us...nager's built-in live and historical simulators.<font color="#c040c0">\n</font>", '__file__': r'C:\algoTrading\fxmanager\src\fxmanager\strategies\template.py', '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object&gt;, '__name__': 'fxmanager.strategies.template', '__package__': 'fxmanager.strategies', '__spec__': ModuleSpec(name='fxmanager.strategies.template',...anager\\src\\fxmanager\\strategies\\template.py'), 'md': &lt;module 'fxmanager._metadata' from 'C:\\algoTrading\\fxmanager\\src\\fxmanager\\_metadata.py'&gt;, ...}</td></tr></table>
+</body></html>

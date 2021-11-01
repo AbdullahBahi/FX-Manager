@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fxmanager.basic package &mdash; FX-Manager 1.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fxmanager.dwx package" href="fxmanager.dwx.html" />
+    <link rel="prev" title="fxmanager package" href="fxmanager.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FX-Manager
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fxmanager</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fxmanager.html">fxmanager package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="fxmanager.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">fxmanager.basic package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.dwx.html">fxmanager.dwx package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.optimization.html">fxmanager.optimization package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.simulation.html">fxmanager.simulation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.strategies.html">fxmanager.strategies package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fxmanager.html#module-fxmanager">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FX-Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">fxmanager</a> &raquo;</li>
+          <li><a href="fxmanager.html">fxmanager package</a> &raquo;</li>
+      <li>fxmanager.basic package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fxmanager.basic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="fxmanager-basic-package">
+<h1>fxmanager.basic package<a class="headerlink" href="#fxmanager-basic-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-fxmanager.basic.account">
+<span id="fxmanager-basic-account-module"></span><h2>fxmanager.basic.account module<a class="headerlink" href="#module-fxmanager.basic.account" title="Permalink to this headline"></a></h2>
+<p>This module contains ‘Account’ class which is used for creating a fully functional virtual forex trading accounts.</p>
+<p>used for trading simulation and strategies backtesting. first the user creates an account instance with the required paramaters, then this
+instance is passed to fxmanager’s built-in historical or live simulators.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><ul class="simple">
+<li><p>Account: Class that simulates forex trading accounts.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="fxmanager.basic.account.Account">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fxmanager.basic.account.</span></span><span class="sig-name descname"><span class="pre">Account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">balance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_currency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'usd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leverage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume_bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.01,</span> <span class="pre">8.0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.account.Account" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that simulates forex trading accounts.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>balance         : float with initial balance in the account.</p></li>
+<li><dl class="simple">
+<dt>account_type<span class="classifier">string idicating account type, supported account types are</span></dt><dd><ul>
+<li><p>standard: lot size = 100,000</p></li>
+<li><p>mini    : lot size = 10,000</p></li>
+<li><p>micro   : lot size = 1000</p></li>
+<li><p>nano    : lot size = 100</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>account_currency: string indicating the account currency (currency of initial balance).</p></li>
+<li><p>leverage        : float indicating the leverage provided by the broker</p></li>
+<li><p>volume_bounds   : tuple of 2 floats, minimum and maximum availabe trading volumes per one position.</p></li>
+</ul>
+</dd>
+<dt>Public Methods:</dt><dd><ul class="simple">
+<li><p>open_pisition() : opens a new position and updates the state of the account accordingly.</p></li>
+<li><p>close_position(): closes an opened position and updates the state of the account accordingly.</p></li>
+<li><p>update()        : updates the state of the account (including oppened positions) with the current market prices.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.basic.account.Account.close_position">
+<span class="sig-name descname"><span class="pre">close_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.account.Account.close_position" title="Permalink to this definition"></a></dt>
+<dd><p>closes an opened position and updates the state of the account accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.basic.account.Account.open_pisition">
+<span class="sig-name descname"><span class="pre">open_pisition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.account.Account.open_pisition" title="Permalink to this definition"></a></dt>
+<dd><p>opens a new position and updates the state of the account accordingly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.basic.account.Account.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.account.Account.update" title="Permalink to this definition"></a></dt>
+<dd><p>updates the state of the account (including oppened positions) with the current market prices.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fxmanager.basic.util">
+<span id="fxmanager-basic-util-module"></span><h2>fxmanager.basic.util module<a class="headerlink" href="#module-fxmanager.basic.util" title="Permalink to this headline"></a></h2>
+<p>This module contains helper functions used internally in other fxmanager sub-packages. it also includes public functions to be used by the user to setup fxmanager project structure and pre-process the data.</p>
+<dl class="simple">
+<dt>Public Functions:</dt><dd><ul class="simple">
+<li><p>get_portfolios(): gets the portfolios to be used in historical backtesting of strategies.</p></li>
+<li><p>setup()         : creates the required folders and files for any new project according to application type.</p></li>
+<li><p>preprocess()    : preprocesses the raw data files to prepare it for analysis and simumlations.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.expected_return">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">expected_return</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_pairs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leverage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">risk_reward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_scenarios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.expected_return" title="Permalink to this definition"></a></dt>
+<dd><p>calculates the average expected daily return from a portfolio given a win rate and a risk-reward ratio.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>day           : integer with range from 0 to (number of working days in the dataset-1).</p></li>
+<li><p>data_dir      : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>time_frames   : list of portfolio timeframes.</p></li>
+<li><p>currency_pairs: list of portfolio currency pairs.</p></li>
+<li><p>weights       : list of portfolio weights.</p></li>
+<li><p>leverage      : float indicating the leverage. if no leverage is used set to 1.</p></li>
+<li><p>win_rate      : float indicating the percentage of winning positions to the total number of positions.</p></li>
+<li><p>risk_reward   : float indicating ratio of reward to risk.</p></li>
+<li><p>n_scenarios   : integer indicating the number of scenarios across which the expected return is averaged.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>avg_expected_return: float indicating the average expected return.</p></li>
+<li><dl class="simple">
+<dt>win_probability<span class="classifier">float indicating the ratio of number of scenarios in which the expected return is positive to the total number</span></dt><dd><p>of scenarios.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>used in ‘fxmanage.optimization.eqw_optimization_test.run_test()’ function to calculate the expected returns using the optimized 
+portfolios.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.findCombinations">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">findCombinations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.findCombinations" title="Permalink to this definition"></a></dt>
+<dd><p>finds all possible combinations that sum up to n.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>n: integer idicating the number that returned cambinations sum up to.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>every combination is printed in a new line to standard output. to save the results to a file, change sys.stdout to the path of the file.</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>used in ‘fxmanager.basic.util.setup()’ function to save required weight combinations to ‘data_dirweigts’ directory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.findCombinationsUtil">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">findCombinationsUtil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reducedNum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.findCombinationsUtil" title="Permalink to this definition"></a></dt>
+<dd><p>helper function for findCombinations() function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.get_avg_rets">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">get_avg_rets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_pairs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.get_avg_rets" title="Permalink to this definition"></a></dt>
+<dd><p>gets the average best &amp; worst returns of the passed currency pairs &amp; timeframes from the preprocessed data in the ‘data_dirtime_frames’ directory.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>day           : integer indicating day number - starts from 0 and ends with the total number of work days in the dataset.</p></li>
+<li><p>data_dir      : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>time_frames   : a list of strings of the timeframes from which the data is read.</p></li>
+<li><p>currency_pairs: a list of strings of the currency pairs from which the data is read.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>avg_best_rets: pandas dataframe of average best return for each asset, columns are time_frames and index is currency_pairs.</p></li>
+<li><p>avg_wrst_rets: pandas dataframe of average worst return for each asset, columns are time_frames and index is currency_pairs.</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>used in ‘fxmanager.simulation.live.run()’ function if the construct_portfolio is set to True.</p></li>
+<li><p>used in ‘fxmanager.optimization.w_optimization_test’ and ‘fxmanager.optimization.eqw_optimization_test’ modules.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.get_portfolios">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">get_portfolios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_portfolio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portfolios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimized_portfolios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_single_porfolio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.get_portfolios" title="Permalink to this definition"></a></dt>
+<dd><p>gets the portfolios to be used in historical backtesting of strategies.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>data_dir        : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>num_days        : total number of work days in the dataset.</p></li>
+<li><p>single_portfolio: dictionary of the portfolio to be used for backtesting with keys (currency_pairs, time_frames, weights) used if ‘optimized_portfolios’ is False and ‘use_single_porfolio’ is True.</p></li>
+<li><p>portfolios      : list of dictionries like ‘single_portfolio’. Lenght of the list = num_days-1. used if ‘optimized_portfolios’ is False and ‘use_single_porfolio’ is False.</p></li>
+<li><p>optimized_portfolios: boolean flag, set to True if an optimization test is run and the portfolios to be used are saved in ‘data_dirstatsOptimizer_Test_portfolios.csv’ file.</p></li>
+<li><p>use_single_porfolio: boolean flag, used if ‘optimized_portfolios’ is False, set to true if you passed a single portfolio in the ‘single_portfolio’ argument, if False, ‘portfolios’ argument is used instead.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>df: pandas dataframe with columns (currency_pairs, time_frames, weights) and range index of length = num_days</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>used by user before calling the function ‘fxmanager.simulation.historic.run()’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.get_weights">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">get_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_assets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.get_weights" title="Permalink to this definition"></a></dt>
+<dd><p>reads the pre-calculated weights from ‘data_dirweights’ directory to be used for weight optimization.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>data_dir   : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><p>num_assets : number of assets in the portfolio being optimized. An asset is a currency pair in a specific timeframe.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>weight_combinations_list: list of all possible weight combinations for the passed number of assets.</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>used in ‘fxmanager.optimization.weight_optimizer’ module.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.ncr">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">ncr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.ncr" title="Permalink to this definition"></a></dt>
+<dd><p>calculates the number of combinations nCrز</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>n: integer indicating the total number of items to be combined.</p></li>
+<li><p>r: integer indicating the length of every combination.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>res: integer with the result.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.preprocess">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_logs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>preprocesses the raw data files to prepare it for analysis and simumlations.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>data_dir : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.</p></li>
+<li><dl class="simple">
+<dt>app_type<span class="classifier">string indicating the application type. supported app types are</span></dt><dd><ul>
+<li><p>back_tester          : if you want to test trading strategies using histoical data on FX-Manager virtual account.</p></li>
+<li><p>portfolio_optimizer  : if you want to asses different portfolio optimization methods and objectives using histoical data.</p></li>
+<li><p>live_simulator       : if you want to test trading strategies in real time using MT4 Live data on FX-Manager virtual account.</p></li>
+<li><p>all_in_one           : if you want to use all the previous features.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>raw_data_type<span class="classifier">string with the type of raw data used, supported raw data types are</span></dt><dd><ul>
+<li><p>daily_bid_ask  : Bid/Ask ticks in daily seperate files (a file for each currency_pair in each day)</p></li>
+<li><p>daily_candles  : 1-min candles in daily seperate files (a file for each currency_pair in each day)</p></li>
+<li><p>period_candles : 1-min candles over a period (a file for each currency_pair for all the days)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>raw_data_format<span class="classifier">dictionary with information about row data files, the required keys vary according to raw_data_type argument, the following are exambles of how the dictionary should be formatted for each type</span></dt><dd><ul>
+<li><p>daily_bid_ask: {‘date_col’:’Gmt Time’, ‘date_format’:’%d.%m.%Y %H:%M:%S.%f’, ‘ask_col’:’Ask’, ‘bid_col’:’Bid’}</p></li>
+<li><p>daily_candles or period_candles: {‘date_col’:’time’, ‘date_format’:’%Y.%m.%d %H:%M’, ‘open_col’:’open’, ‘high_col’:’high’, ‘low_col’:’low’, ‘close_col’:’close’, ‘tick_vol_col’:’tick_volume’}</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>save_logs : boolean flag, if True, the program logs are saved to ‘data_dirlogspreprocessing_logs.txt’ file.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>None</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.process_daily_bid_ask">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">process_daily_bid_ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.process_daily_bid_ask" title="Permalink to this definition"></a></dt>
+<dd><p>helper function for ‘fxmanager.basic.util.preprocess()’ function.</p>
+<p>used to group the given Bid/Ask data by the given timeframe and calculate open and close prices for the new candle sticks in the new timeframe.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.process_ohlc">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">process_ohlc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.process_ohlc" title="Permalink to this definition"></a></dt>
+<dd><p>helper function for ‘fxmanager.basic.util.preprocess()’ function.</p>
+<p>used to group the given OHLCV data by the given timeframe and calculate open and close prices for the new candle sticks in the new timeframe.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.setup">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_raw_data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_tfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.setup" title="Permalink to this definition"></a></dt>
+<dd><p>creates the required folders and files for any new project according to application type.</p>
+<dl>
+<dt>Args:</dt><dd><ul>
+<li><dl class="simple">
+<dt>app_type<span class="classifier">string indicating the application type. supported app types are:</span></dt><dd><ul class="simple">
+<li><p>back_tester          : if you want to test trading strategies using histoical data on FX-Manager virtual account.</p></li>
+<li><p>portfolio_optimizer  : if you want to asses different portfolio optimization methods and objectives using histoical data.</p></li>
+<li><p>live_simulator       : if you want to test trading strategies in real time using MT4 Live data on FX-Manager virtual account.</p></li>
+<li><p>all_in_one           : if you want to use all the previous features.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>raw_data_dir     : string containig the path to directory in which the raw data files are kept.</p></li>
+<li><p>live_raw_data_dir: string containig the path to directory in which the raw data files from the previous day are kept. used to construct a portfolio using built-in fxmanager optimization for live simulation.</p></li>
+<li><dl class="simple">
+<dt>raw_data_type<span class="classifier">string with the type of raw data used, supported raw data types are: </span></dt><dd><ul class="simple">
+<li><p>daily_bid_ask  : Bid/Ask ticks in daily seperate files (a file for each currency_pair in each day)</p></li>
+<li><p>daily_candles  : 1-min candles in daily seperate files (a file for each currency_pair in each day)</p></li>
+<li><p>period_candles : 1-min candles over a period (a file for each currency_pair for all the days)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>file_name_format<span class="classifier">string of white spaces with the same length as raw data file names. Givin that each file name has information about date and currency pair symbol, the white spaces in the same location as these information are replaced as follows:</span></dt><dd><ul class="simple">
+<li><p>day, month and year in the date are replaced with (dd), (mm), (yyyy) respectively.</p></li>
+<li><p>currency pair symbol is replaced with (cccccc).</p></li>
+</ul>
+<p>** for example, if the file name is ‘AUDUSD_Ticks_02.08.2021-02.08.2021.csv’ then the file_name_format is: ‘cccccc       dd mm yyyy               ‘</p>
+</dd>
+</dl>
+</li>
+<li><p>num_days         : total number of work days in the dataset.</p></li>
+<li><p>num_cps          : integer indicating the number of currency pairs in the dataset</p></li>
+<li><p>num_tfs          : integer indicating the number of timeframes in the dataset.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.basic.util.top_n_timeframes">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.basic.util.</span></span><span class="sig-name descname"><span class="pre">top_n_timeframes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">best</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objective</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min_win_rate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.basic.util.top_n_timeframes" title="Permalink to this definition"></a></dt>
+<dd><p>selects the best (n) of time frames according to the ‘objective’ argument.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>best     : pandas dataframe with the return of the ‘get_avg_rets()’ function defined above. note tha the index must be transformed first to range index.</p></li>
+<li><p>wrst     : pandas dataframe with the return of the ‘get_avg_rets()’ function defined above. note tha the index must be transformed first to range index.</p></li>
+<li><p>objective: string indecating the criteria with which the best time frames will be chosed, supported objectives are (min_win_rate, min_risk_reward)</p></li>
+<li><p>n        : integer indicating the number of time frames to return</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>top_n: numpy array with the names of selected best time frames.</p></li>
+<li><p>W_R  : pandas series with required win rates for every time frame.</p></li>
+<li><p>R_R  : pandas series with required risk rewards for every time frame.</p></li>
+</ul>
+</dd>
+<dt>Usage:</dt><dd><ul class="simple">
+<li><p>used in ‘fxmanager.optimization.weight_optimizer’ and ‘fxmanager.optimization.eq_weight_optimizer’ modules.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fxmanager.basic">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fxmanager.basic" title="Permalink to this headline"></a></h2>
+<p>This sub-package contains mudules of helper functions used intrnally in all FX-Manager’s sub-packages.</p>
+<p>in addition to the helper functions, the sub-package contains functions used for setting up new FX-Manager projects and preprocessing data to be compaitable with FX-Manager. it also contains the module used for simulating the trading accounts.</p>
+<dl class="simple">
+<dt>Modules:</dt><dd><ul class="simple">
+<li><p>util    : This module contains helper functions used internally in other fxmanager sub-packages. it also includes public functions to be used by the user to setup fxmanager project structure and pre-process the data.</p></li>
+<li><p>account : This module contains ‘Account’ class which is used for creating a fully functional virtual forex trading accounts.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fxmanager.html" class="btn btn-neutral float-left" title="fxmanager package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fxmanager.dwx.html" class="btn btn-neutral float-right" title="fxmanager.dwx package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright © 2021 Abdullah Bahi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

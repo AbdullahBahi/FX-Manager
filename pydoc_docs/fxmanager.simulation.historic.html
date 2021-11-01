@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module fxmanager.simulation.historic</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="fxmanager.html"><font color="#ffffff">fxmanager</font></a>.<a href="fxmanager.simulation.html"><font color="#ffffff">simulation</font></a>.historic</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Calgotrading%5Cfxmanager%5Csrc%5Cfxmanager%5Csimulation%5Chistoric.py">c:\algotrading\fxmanager\src\fxmanager\simulation\historic.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;contains&nbsp;helper&nbsp;functions&nbsp;used&nbsp;internally&nbsp;in&nbsp;this&nbsp;module&nbsp;and&nbsp;a&nbsp;public&nbsp;function&nbsp;to&nbsp;run&nbsp;historical&nbsp;simulation.<br>
+&nbsp;<br>
+Public&nbsp;Functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#-run">run</a>():&nbsp;starts&nbsp;trading&nbsp;simulation&nbsp;with&nbsp;historic&nbsp;prices.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="fxmanager._metadata.html">fxmanager._metadata</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-close_position"><strong>close_position</strong></a>(account, ticket, portfolio_prices, portfolio_orders, wins, losses)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;'fxmanager.simulation.historic.<a href="#-run">run</a>()'&nbsp;function.&nbsp;closes&nbsp;an&nbsp;opened&nbsp;position&nbsp;by&nbsp;ticket.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;portfolio_orders:&nbsp;pandas&nbsp;dataframe&nbsp;with&nbsp;history&nbsp;of&nbsp;closed&nbsp;positions.&nbsp;Each&nbsp;row&nbsp;represents&nbsp;a&nbsp;closed&nbsp;position.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;wins&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;integer&nbsp;indicating&nbsp;number&nbsp;of&nbsp;closed&nbsp;positions&nbsp;with&nbsp;positive&nbsp;profit.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;losses&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;integer&nbsp;indicating&nbsp;number&nbsp;of&nbsp;closed&nbsp;positions&nbsp;with&nbsp;nigative&nbsp;profit.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;win_rate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;float&nbsp;indicating&nbsp;percentage&nbsp;of&nbsp;wins&nbsp;to&nbsp;(wins+losses).</tt></dd></dl>
+ <dl><dt><a name="-get_prices"><strong>get_prices</strong></a>(day, data_dir=None, time_frame='', currency_pair='')</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;'fxmanager.simulation.historic.<a href="#-run">run</a>()'&nbsp;function.&nbsp;gets&nbsp;the&nbsp;bid/ask&nbsp;prices&nbsp;of&nbsp;the&nbsp;given&nbsp;currency_pair&nbsp;&amp;&nbsp;time_frame&nbsp;in&nbsp;the&nbsp;selected&nbsp;day&nbsp;from&nbsp;the&nbsp;'data_dir\time_frames'&nbsp;directory.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;integer&nbsp;indicating&nbsp;day&nbsp;number&nbsp;-&nbsp;starts&nbsp;from&nbsp;0&nbsp;and&nbsp;ends&nbsp;with&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;work&nbsp;days&nbsp;in&nbsp;the&nbsp;dataset&nbsp;(num_days-1).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;data_dir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;string&nbsp;with&nbsp;the&nbsp;directory&nbsp;or&nbsp;full&nbsp;path&nbsp;to&nbsp;the&nbsp;directory&nbsp;in&nbsp;which&nbsp;application&nbsp;data&nbsp;is&nbsp;kept.&nbsp;If&nbsp;the&nbsp;setup()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;is&nbsp;used&nbsp;to&nbsp;create&nbsp;the&nbsp;recommended&nbsp;project&nbsp;structure,&nbsp;the&nbsp;default&nbsp;None&nbsp;value&nbsp;should&nbsp;be&nbsp;used.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;time_frame&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;a&nbsp;string&nbsp;of&nbsp;the&nbsp;timeframe&nbsp;from&nbsp;wich&nbsp;the&nbsp;prices&nbsp;is&nbsp;read.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;currency_pair&nbsp;:&nbsp;a&nbsp;string&nbsp;of&nbsp;the&nbsp;currency&nbsp;pair&nbsp;from&nbsp;wich&nbsp;the&nbsp;prices&nbsp;is&nbsp;read.&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;df:&nbsp;pandas&nbsp;dataframe&nbsp;of&nbsp;the&nbsp;bid&nbsp;&amp;&nbsp;ask&nbsp;prices&nbsp;with&nbsp;columns&nbsp;(ask_open,&nbsp;bid_open,&nbsp;ask_close,&nbsp;bid_close,&nbsp;tick_volume)&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;datetime&nbsp;index&nbsp;from&nbsp;the&nbsp;begining&nbsp;to&nbsp;the&nbsp;end&nbsp;off&nbsp;the&nbsp;day&nbsp;with&nbsp;frequency&nbsp;equal&nbsp;to&nbsp;time_frame.</tt></dd></dl>
+ <dl><dt><a name="-getcwd"><strong>getcwd</strong></a>()</dt><dd><tt>Return&nbsp;a&nbsp;unicode&nbsp;string&nbsp;representing&nbsp;the&nbsp;current&nbsp;working&nbsp;directory.</tt></dd></dl>
+ <dl><dt><a name="-print_final_state"><strong>print_final_state</strong></a>(account, win_rate)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;'fxmanager.simulation.historic.<a href="#-run">run</a>()'&nbsp;function.&nbsp;prints&nbsp;the&nbsp;final&nbsp;state&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;after&nbsp;the&nbsp;simulation&nbsp;is&nbsp;finished.</tt></dd></dl>
+ <dl><dt><a name="-run"><strong>run</strong></a>(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_logs=False, **kwargs)</dt><dd><tt>starts&nbsp;trading&nbsp;simulation&nbsp;with&nbsp;historic&nbsp;prices.<br>
+&nbsp;<br>
+Args:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;account&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;account&nbsp;object&nbsp;with&nbsp;all&nbsp;account&nbsp;information.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;strategy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;strategy&nbsp;object&nbsp;with&nbsp;the&nbsp;trading&nbsp;strategy&nbsp;information.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;data_dir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;string&nbsp;with&nbsp;the&nbsp;directory&nbsp;or&nbsp;full&nbsp;path&nbsp;to&nbsp;the&nbsp;directory&nbsp;in&nbsp;which&nbsp;application&nbsp;data&nbsp;is&nbsp;kept.&nbsp;If&nbsp;the&nbsp;setup()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;is&nbsp;used&nbsp;to&nbsp;create&nbsp;the&nbsp;recommended&nbsp;project&nbsp;structure,&nbsp;the&nbsp;default&nbsp;None&nbsp;value&nbsp;should&nbsp;be&nbsp;used.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;portfolios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;pandas&nbsp;dataframe&nbsp;with&nbsp;columns&nbsp;(currency_pairs,&nbsp;time_frames,&nbsp;weights)&nbsp;and&nbsp;range&nbsp;index&nbsp;of&nbsp;length&nbsp;=&nbsp;num_days<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;risk_factor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;a&nbsp;float&nbsp;with&nbsp;range&nbsp;from&nbsp;0&nbsp;to&nbsp;1&nbsp;indicating&nbsp;the&nbsp;percentage&nbsp;of&nbsp;reinvested&nbsp;balance.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;save_logs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;boolean&nbsp;flag,&nbsp;if&nbsp;the&nbsp;program&nbsp;logs&nbsp;are&nbsp;saved&nbsp;to&nbsp;'data_dir\logs\live_simulation_logs.txt'&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;kwargs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;dictionary&nbsp;to&nbsp;hold&nbsp;any&nbsp;number&nbsp;of&nbsp;arguments&nbsp;required&nbsp;for&nbsp;the&nbsp;strategy&nbsp;object.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;None</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__dict__</strong> = {'__builtins__': {'ArithmeticError': &lt;class 'ArithmeticError'&gt;, 'AssertionError': &lt;class 'AssertionError'&gt;, 'AttributeError': &lt;class 'AttributeError'&gt;, 'BaseException': &lt;class 'BaseException'&gt;, 'BlockingIOError': &lt;class 'BlockingIOError'&gt;, 'BrokenPipeError': &lt;class 'BrokenPipeError'&gt;, 'BufferError': &lt;class 'BufferError'&gt;, 'BytesWarning': &lt;class 'BytesWarning'&gt;, 'ChildProcessError': &lt;class 'ChildProcessError'&gt;, 'ConnectionAbortedError': &lt;class 'ConnectionAbortedError'&gt;, ...}, '__cached__': r'C:\algoTrading\fxmanager\src\fxmanager\simulation\__pycache__\historic.cpython-37.pyc', '__dict__': {'Doc': &lt;class '__main__.Doc'&gt;, 'ErrorDuringImport': &lt;class '__main__.ErrorDuringImport'&gt;, 'HTMLDoc': &lt;class '__main__.HTMLDoc'&gt;, 'HTMLRepr': &lt;class '__main__.HTMLRepr'&gt;, 'Helper': &lt;class '__main__.Helper'&gt;, 'ModuleScanner': &lt;class '__main__.ModuleScanner'&gt;, 'Repr': &lt;class 'reprlib.Repr'&gt;, 'TextDoc': &lt;class '__main__.TextDoc'&gt;, 'TextRepr': &lt;class '__main__.TextRepr'&gt;, '_PlainTextDoc': &lt;class '__main__._PlainTextDoc'&gt;, ...}, '__doc__': '<font color="#c040c0">\n</font>This module contains helper functions used inte... starts trading simulation with historic prices.<font color="#c040c0">\n</font>', '__file__': r'C:\algoTrading\fxmanager\src\fxmanager\simulation\historic.py', '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object&gt;, '__name__': 'fxmanager.simulation.historic', '__package__': 'fxmanager.simulation', '__spec__': ModuleSpec(name='fxmanager.simulation.historic',...anager\\src\\fxmanager\\simulation\\historic.py'), 'close_position': &lt;function close_position&gt;, ...}</td></tr></table>
+</body></html>

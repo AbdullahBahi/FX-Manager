@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module fxmanager.dwx.DWX_ZeroMQ_Connector_v2_0_1_RC8</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="fxmanager.html"><font color="#ffffff">fxmanager</font></a>.<a href="fxmanager.dwx.html"><font color="#ffffff">dwx</font></a>.DWX_ZeroMQ_Connector_v2_0_1_RC8</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Calgotrading%5Cfxmanager%5Csrc%5Cfxmanager%5Cdwx%5Cdwx_zeromq_connector_v2_0_1_rc8.py">c:\algotrading\fxmanager\src\fxmanager\dwx\dwx_zeromq_connector_v2_0_1_rc8.py</a></font></td></tr></table>
+    <p><tt>DWX_ZeroMQ_Connector_v2_0_1_RC8.py<br>
+--<br>
+@author:&nbsp;Darwinex&nbsp;Labs&nbsp;(www.darwinex.com)<br>
+&nbsp;<br>
+Copyright&nbsp;(c)&nbsp;2017-2019,&nbsp;Darwinex.&nbsp;All&nbsp;rights&nbsp;reserved.<br>
+&nbsp;<br>
+Licensed&nbsp;under&nbsp;the&nbsp;BSD&nbsp;3-Clause&nbsp;License,&nbsp;you&nbsp;may&nbsp;not&nbsp;use&nbsp;this&nbsp;file&nbsp;except&nbsp;<br>
+in&nbsp;compliance&nbsp;with&nbsp;the&nbsp;License.&nbsp;<br>
+&nbsp;<br>
+You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;License&nbsp;at:&nbsp;&nbsp;&nbsp;&nbsp;<br>
+https://opensource.org/licenses/BSD-3-Clause</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="zmq.html">zmq</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="fxmanager.dwx.DWX_ZeroMQ_Connector_v2_0_1_RC8.html#DWX_ZeroMQ_Connector">DWX_ZeroMQ_Connector</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DWX_ZeroMQ_Connector">class <strong>DWX_ZeroMQ_Connector</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DWX_ZeroMQ_Connector">DWX_ZeroMQ_Connector</a>(_ClientID='dwx-zeromq',&nbsp;_host='localhost',&nbsp;_protocol='tcp',&nbsp;_PUSH_PORT=32768,&nbsp;_PULL_PORT=32769,&nbsp;_SUB_PORT=32770,&nbsp;_delimiter=';',&nbsp;_pulldata_handlers=[],&nbsp;_subdata_handlers=[],&nbsp;_verbose=True,&nbsp;_poll_timeout=1000,&nbsp;_sleep_delay=0.001,&nbsp;_monitor=False)<br>
+&nbsp;<br>
+Setup&nbsp;ZeroMQ&nbsp;-&gt;&nbsp;MetaTrader&nbsp;Connector<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DWX_ZeroMQ_Connector-__init__"><strong>__init__</strong></a>(self, _ClientID='dwx-zeromq', _host='localhost', _protocol='tcp', _PUSH_PORT=32768, _PULL_PORT=32769, _SUB_PORT=32770, _delimiter=';', _pulldata_handlers=[], _subdata_handlers=[], _verbose=True, _poll_timeout=1000, _sleep_delay=0.001, _monitor=False)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DWX_ZeroMQ_Connector-remote_recv"><strong>remote_recv</strong></a>(self, _socket)</dt></dl>
+
+<dl><dt><a name="DWX_ZeroMQ_Connector-remote_send"><strong>remote_send</strong></a>(self, _socket, _data)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-sleep"><strong>sleep</strong></a>(...)</dt><dd><tt><a href="#-sleep">sleep</a>(seconds)<br>
+&nbsp;<br>
+Delay&nbsp;execution&nbsp;for&nbsp;a&nbsp;given&nbsp;number&nbsp;of&nbsp;seconds.&nbsp;&nbsp;The&nbsp;argument&nbsp;may&nbsp;be<br>
+a&nbsp;floating&nbsp;point&nbsp;number&nbsp;for&nbsp;subsecond&nbsp;precision.</tt></dd></dl>
+</td></tr></table>
+</body></html>

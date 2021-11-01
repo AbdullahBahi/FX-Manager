@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fxmanager.strategies package &mdash; FX-Manager 1.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="fxmanager.simulation package" href="fxmanager.simulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FX-Manager
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fxmanager</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fxmanager.html">fxmanager package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="fxmanager.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.basic.html">fxmanager.basic package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.dwx.html">fxmanager.dwx package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.optimization.html">fxmanager.optimization package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fxmanager.simulation.html">fxmanager.simulation package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">fxmanager.strategies package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fxmanager.html#module-fxmanager">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FX-Manager</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">fxmanager</a> &raquo;</li>
+          <li><a href="fxmanager.html">fxmanager package</a> &raquo;</li>
+      <li>fxmanager.strategies package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fxmanager.strategies.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="fxmanager-strategies-package">
+<h1>fxmanager.strategies package<a class="headerlink" href="#fxmanager-strategies-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-fxmanager.strategies.naieve_momentum">
+<span id="fxmanager-strategies-naieve-momentum-module"></span><h2>fxmanager.strategies.naieve_momentum module<a class="headerlink" href="#module-fxmanager.strategies.naieve_momentum" title="Permalink to this headline"></a></h2>
+<p>This module contains simple implementation of momentum trading strategy.</p>
+<dl class="simple">
+<dt>Public Functions:</dt><dd><ul class="simple">
+<li><p>get_orders(): sample trading strategy for purposes of testing live and historic trading simulators.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="fxmanager.strategies.naieve_momentum.get_orders">
+<span class="sig-prename descclassname"><span class="pre">fxmanager.strategies.naieve_momentum.</span></span><span class="sig-name descname"><span class="pre">get_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prices</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.strategies.naieve_momentum.get_orders" title="Permalink to this definition"></a></dt>
+<dd><p>sample trading strategy for purposes of testing live and historic trading simulators.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>prices: pandas DataFrame with range index and a the following columns:</dt><dd><ul>
+<li><p>ask_open: open ask price of the candle stick.</p></li>
+<li><p>bid_open: open bid price of the candle stick.</p></li>
+<li><p>ask_close: close ask price of the candle stick.</p></li>
+<li><p>bid_close: close bid price of the candle stick.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>kwargs: special dictionary to hold any number of required arguments for the function.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>orders: pandas DataFrame with ONE RAW and the following columns:</dt><dd><ul>
+<li><p>order_type: can be one of 3 values (buy, sell, hold)</p></li>
+<li><p>SL : stop loss.</p></li>
+<li><p>TP : take profit.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-fxmanager.strategies.template">
+<span id="fxmanager-strategies-template-module"></span><h2>fxmanager.strategies.template module<a class="headerlink" href="#module-fxmanager.strategies.template" title="Permalink to this headline"></a></h2>
+<p>This module contains a class that is used by user to create a strategy object which is passed to fxmanager’s built-in live and historical simulators.</p>
+<dl class="simple">
+<dt>Public Classes:</dt><dd><ul class="simple">
+<li><p>strategy_template: Class for injecting user defined trading strategies into fxmanager’s built-in live and historical simulators.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="fxmanager.strategies.template.strategy_template">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">fxmanager.strategies.template.</span></span><span class="sig-name descname"><span class="pre">strategy_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">take_all_prices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.strategies.template.strategy_template" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for injecting user defined trading strategies into fxmanager’s built-in live and historical simulators.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>strategy<span class="classifier">reference to a user defined function for some trading strategy. The function MUST be structured as follows in order for the simulation to work proberly:  </span></dt><dd><ul>
+<li><dl class="simple">
+<dt>takes ONLY ONE positional argument called ‘prices’. This argument is a pandas DataFrame with range index and the following columns:</dt><dd><ul>
+<li><p>ask_open: open ask price of the candle stick.</p></li>
+<li><p>bid_open: open bid price of the candle stick.</p></li>
+<li><p>ask_close: close ask price of the candle stick.</p></li>
+<li><p>bid_close: close bid price of the candle stick.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>takes <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs for any other keword arguments.</p></li>
+<li><dl class="simple">
+<dt>returns a pandas DataFrame with ONE RAW and the following columns:</dt><dd><ul>
+<li><p>order_type: can be one of 3 values (buy, sell, hold)</p></li>
+<li><p>SL : stop loss.</p></li>
+<li><p>TP : take profit.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>take_all_prices: boolean that controls the frequency of the range index of ‘prices’ DataFrame.  </dt><dd><p>If True:
+all the prices history since the begining of the day is passed to the strategy function, the index is a normal range index (0, 1, 2, …). the time difference between every reading is determined by the ‘sleep_time’ argument in the ‘fxmanager.simulation.live.run()’ or ‘fxmanager.simulation.historic.run()’ functions.
+If False:
+the frequncy of the prices becomes dependant on the time frame in which we want to generate an order, for examble, if we want to open a position in ‘EURUSD’ in the ‘5min’ time frame, the index will become (0, 5, 10, ..).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Methods:</dt><dd><ul class="simple">
+<li><p>get_orders: used in ‘fxmanager.simulation.live.run()’ and ‘fxmanager.simulation.historic.run()’ functions.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.strategies.template.strategy_template.get_orders">
+<span class="sig-name descname"><span class="pre">get_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prices</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.strategies.template.strategy_template.get_orders" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.strategies.template.strategy_template.get_portfolios_template">
+<span class="sig-name descname"><span class="pre">get_portfolios_template</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.strategies.template.strategy_template.get_portfolios_template" title="Permalink to this definition"></a></dt>
+<dd><p>returns a list of dictionaries of length = num_days where each dictionary is a portfolio used for a given day.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.strategies.template.strategy_template.kwargs_template">
+<span class="sig-name descname"><span class="pre">kwargs_template</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.strategies.template.strategy_template.kwargs_template" title="Permalink to this definition"></a></dt>
+<dd><p>returns a template dictionary for keyword args used in used defined strategies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fxmanager.strategies.template.strategy_template.template">
+<span class="sig-name descname"><span class="pre">template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fxmanager.strategies.template.strategy_template.template" title="Permalink to this definition"></a></dt>
+<dd><p>function template for the user to build trading strategies.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>prices: pandas DataFrame with range index and the following columns:</dt><dd><ul>
+<li><p>ask_open: open ask price of the candle stick.</p></li>
+<li><p>bid_open: open bid price of the candle stick.</p></li>
+<li><p>ask_close: close ask price of the candle stick.</p></li>
+<li><p>bid_close: close bid price of the candle stick.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>kwargs: special dictionary to hold any number of required arguments for the function.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>orders: pandas DataFrame with ONE RAW and the following columns:</dt><dd><ul>
+<li><p>order_type: can be one of 3 values (buy, sell, hold)</p></li>
+<li><p>SL : stop loss.</p></li>
+<li><p>TP : take profit.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-fxmanager.strategies">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fxmanager.strategies" title="Permalink to this headline"></a></h2>
+<p>This sub-package contains the mudules used for building and injecting trading strategies int FX-Manager’s trading simulations.</p>
+<dl class="simple">
+<dt>Public Modules:</dt><dd><ul class="simple">
+<li><p>naieve_momentum: This module contains simple implementation of momentum trading strategy, used as default for simulations.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fxmanager.simulation.html" class="btn btn-neutral float-left" title="fxmanager.simulation package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright © 2021 Abdullah Bahi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
