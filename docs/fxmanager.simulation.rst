@@ -1,8 +1,13 @@
 fxmanager.simulation package
 ============================
 
-Submodules
-----------
+Package contents
+----------------
+
+.. automodule:: fxmanager.simulation
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 fxmanager.simulation.historic module
 ------------------------------------
@@ -20,10 +25,3 @@ fxmanager.simulation.live module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: fxmanager.simulation
-   :members:
-   :undoc-members:
-   :show-inheritance:

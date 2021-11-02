@@ -8,15 +8,8 @@ Subpackages
    :maxdepth: 4
 
    fxmanager.basic
-   fxmanager.dwx
    fxmanager.optimization
    fxmanager.simulation
    fxmanager.strategies
+   fxmanager.dwx
 
-Module contents
----------------
-
-.. automodule:: fxmanager
-   :members:
-   :undoc-members:
-   :show-inheritance:

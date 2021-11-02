@@ -318,8 +318,7 @@ def setup(app_type='', raw_data_dir='', live_raw_data_dir='', raw_data_type='', 
         
         - file_name_format : string of white spaces with the same length as raw data file names. Givin that each file name has information about date and currency pair symbol, the white spaces in the same location as these information are replaced as follows:
             - day, month and year in the date are replaced with (dd), (mm), (yyyy) respectively.
-            - currency pair symbol is replaced with (cccccc).
-            ** for example, if the file name is 'AUDUSD_Ticks_02.08.2021-02.08.2021.csv' then the file_name_format is: 'cccccc       dd mm yyyy               '
+            - currency pair symbol is replaced with (cccccc). For example, if the file name is 'AUDUSD_Ticks_02.08.2021-02.08.2021.csv' then the file_name_format is: 'cccccc       dd mm yyyy               '
                                          
         - num_days         : total number of work days in the dataset.
         - num_cps          : integer indicating the number of currency pairs in the dataset

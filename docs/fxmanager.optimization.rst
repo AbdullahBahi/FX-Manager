@@ -1,8 +1,13 @@
 fxmanager.optimization package
 ==============================
 
-Submodules
-----------
+Package contents
+----------------
+
+.. automodule:: fxmanager.optimization
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 fxmanager.optimization.eq\_weight\_optimizer module
 ---------------------------------------------------
@@ -36,10 +41,3 @@ fxmanager.optimization.weight\_optimizer module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: fxmanager.optimization
-   :members:
-   :undoc-members:
-   :show-inheritance:

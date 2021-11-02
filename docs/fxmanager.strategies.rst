@@ -1,8 +1,13 @@
 fxmanager.strategies package
 ============================
 
-Submodules
-----------
+Package contents
+----------------
+
+.. automodule:: fxmanager.strategies
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 fxmanager.strategies.naieve\_momentum module
 --------------------------------------------
@@ -20,10 +25,3 @@ fxmanager.strategies.template module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: fxmanager.strategies
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,8 +1,13 @@
 fxmanager.basic package
 =======================
 
-Submodules
-----------
+Package contents
+----------------
+
+.. automodule:: fxmanager.basic
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 fxmanager.basic.account module
 ------------------------------
@@ -20,10 +25,3 @@ fxmanager.basic.util module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: fxmanager.basic
-   :members:
-   :undoc-members:
-   :show-inheritance:
