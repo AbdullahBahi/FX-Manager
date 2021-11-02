@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 try:
     setup(name = 'FX-Manager',
-        version = '1.0.4',
+        version = '1.0.5',
         author = 'Abdullah Bahi',
         author_email = 'abdullahbahi@icloud.com',
-        description = 'fully functional package for developing and testing forex algorithmic trading strategies',
+        description = 'Python package for developing and testing forex algorithmic trading strategies.',
         long_description = long_description,
         long_description_content_type = "text/markdown",
         url = 'https://github.com/AbdullahBahi/fxmanager',
@@ -22,7 +22,7 @@ try:
         scripts = ['scripts\\create_fx_proj.py',
                         'scripts\\fx_data_collector.py', 
                         'scripts\\fx_pp.py',
-                        'scripts\\run_fx_histl_sim.py', 
+                        'scripts\\run_fx_hist_sim.py', 
                         'scripts\\run_fx_live_sim.py', 
                         'scripts\\run_fx_opt_test.py'],
         package_dir = {'':'src'},

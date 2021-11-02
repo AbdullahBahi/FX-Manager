@@ -4,7 +4,7 @@
 This script is used for running a historical trading simulation with historical prices.
 
 Usage:
-      run_fx_histl_sim [options]
+      run_fx_hist_sim [options]
 
 Options:
         -h, --help                   : show this help message and exit.
@@ -71,6 +71,9 @@ Saved Results:
 doc = __doc__
 
 import argparse
+import sys
+from os import getcwd
+sys.path.append(getcwd())
 from fxmanager.basic.account import Account
 from fxmanager.basic.util import get_portfolios
 from fxmanager.strategies.template import strategy_template

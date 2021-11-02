@@ -1,8 +1,8 @@
 __package_name__                 = 'FX-Manager'
-__version__                      = '1.0.4'
+__version__                      = '1.0.5'
 __author__                       = 'Abdullah Bahi'
 __author_email__                 = 'abdullahbahi@icloud.com'
-__description__                  = 'fully functional package for developing and testing forex algorithmic trading strategies'
+__description__                  = 'Python package for developing and testing forex algorithmic trading strategies.'
 __long_description_content_type__= "text/markdown"
 __url__                          = 'https://github.com/AbdullahBahi/fxmanager'
 __keywords__                     = ['forex', 'forex trading', 'algorethmic trading', 'backtesting']

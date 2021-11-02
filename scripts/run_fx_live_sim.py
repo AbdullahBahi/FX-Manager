@@ -104,6 +104,9 @@ Saved Results:
 doc = __doc__
 
 import argparse
+import sys
+from os import getcwd
+sys.path.append(getcwd())
 import json
 from fxmanager.basic.account import Account
 from fxmanager.basic.util import get_portfolios

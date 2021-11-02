@@ -257,12 +257,12 @@ def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_
                                                                         portfolio_orders=portfolio_orders,
                                                                         wins=wins,
                                                                         losses=losses)
+        # Save the orders
+        print('>> SYSTEM MESSAGE >> STAGE 4: Saving Stats & Visualizations ..\n')
+        portfolio_orders.to_csv(join(data_dir,'stats', 'historical_simulation_orders', 'Day_'+str(day)+'_orders.csv'))
+        
         # Print final state of the account
         print_final_state(account=account, win_rate=win_rate)
-
-    # Save the orders
-    print('>> SYSTEM MESSAGE >> STAGE 4: Saving Stats & Visualizations ..\n')
-    portfolio_orders.to_csv(join(data_dir,'stats', 'historical_simulation_orders', 'Day_'+str(day)+'_orders.csv'))
         
     print('>> SYSTEM MESSAGE >> No More Days are Left! Go get More Data!\n')
     print('>> SYSTEM MESSAGE >> Execution Finished')

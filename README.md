@@ -1,15 +1,15 @@
 # FX-Manager
-FX-Manager is a python package that provides a fully functional framework for developing and back testing forex algorithmic trading strategies.
+FX-Manager is a python package for developing and testing forex algorithmic trading strategies.
 
 ## Contents
 - [**Features**](#Features)  
 - [**Installation**](#Installation)  
 - [**Documentation**](#Documentation)  
 - [**Tutorials**](#Tutorials)  
-- [**About Author**](#aAuthor)  
 - [**License**](#License)  
+- [**About Author**](#Author)  
 
-## Features
+# Features
 1. ### Historical market data collection and pre-processing
     - with FX-Manager, you can easily collect historical data from MT4 history center and preprocess it in just a few lines of code.
 
@@ -40,16 +40,16 @@ FX-Manager is a python package that provides a fully functional framework for de
 ## Installation
 Fx-Manager framework is mainly used to create client server applications where the client is the trading bot written in python using FX-Manager's APIs, and the server is an expert advisor that is installed on MT4 trading platform. To utilize the full capacity of the framework, the Following packages & softwares need to be installed and configured.
 
-- **FX-Manager python framework.**
-- **MetaTrader4 (MT4) Trading Platform.** 
+- **FX-Manager python framework**
+- **MetaTrader4 (MT4) Trading Platform** 
 - **Darwenix MQL4 Expert Advisor on MT4**  
  
 In this step-by-step Guild, we'll install all the above requirments.
 1. **Installing FX-Manager python framework.**
     - Using pip  
-        `pip install FX-Manager`
+        `pip install fxmanager`
     - Using conda  
-        `conda install FX-Manager`
+        `conda install fxmanager`
 2. **Installing MetaTrader4 (MT4) Trading Platform.**
     > NOTE: If you already have installed MT4 software and registered an active trading account, feel free to skip to next step.
 
@@ -65,24 +65,19 @@ In this step-by-step Guild, we'll install all the above requirments.
 Now you are all setup to start developing algorithmic trading strategies in python using FX-Manager. Refer to [**Tutorials**](#Tutorials) Section to get started.
 
 ## Documentation
-Sub-Packages:
-1. basic        : contains mudules of helper functions used intrnally in all FX-Manager's sub-packages and functions used for setting up new
-                  FX-Manager projects and preprocessing data.
-2. dwx          : contains a modified version of Darwinex ZeroMQ connector which is used for connecting client code to MT4 trading platform.
-3. optimization : contains the mudules used for portfolio construction and optimization.
-4. simulation   : contains the modules used for historical and live trading sumulations.
-5. strategies   : contains the mudules used for building and injecting trading strategies int FX-Manager's trading simulations.
 
 
 ## Tutorials
 1. [Step-by-step installation guild.](#Installation)
-2. Data collection (coming soon)
-3. Setting up new projects (coming soon)
-4. Data prerocessing (coming soon)
-5. Runing portfolio optimization test on historical data (coming soon)
-6. Runing historical trading simulation (coming soon)
-7. Ruunning real-time trading simulaton (coming soon)
+2. Data collection 
+3. Setting up new projects 
+4. Data pre-processing 
+5. Running portfolio optimization test on historical data
+6. Running historical trading simulation
+7. Running real-time trading simulaton
 
 ## About Author
 
+
 ## License 
+

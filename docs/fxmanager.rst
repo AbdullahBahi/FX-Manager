@@ -1,5 +1,5 @@
-fxmanager package
-=================
+API Reference
+=============
 
 Subpackages
 -----------

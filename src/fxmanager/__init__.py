@@ -1,5 +1,5 @@
 """
-FX-Manager is a python package that provides a fully functional framework for developing and back testing forex algorithmic trading strategies.
+FX-Manager is a python package for developing and testing forex algorithmic trading strategies.
 
 Main Features:
   1. historical data collection and pre-processing: 
