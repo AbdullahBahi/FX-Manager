@@ -1,3 +1,4 @@
+
 # FX-Manager
 FX-Manager is a python package for developing and testing forex algorithmic trading strategies.
 
@@ -65,16 +66,17 @@ In this step-by-step Guild, we'll install all the above requirments.
 Now you are all setup to start developing algorithmic trading strategies in python using FX-Manager. Refer to [**Tutorials**](#Tutorials) Section to get started.
 
 ## Documentation
+The full detailed documentation is provided [here](https://fx-manager.readthedocs.io/en/latest/modules.html).
 
 
 ## Tutorials
-1. Getting started
-2. Data collection 
-3. Setting up new projects 
-4. Data pre-processing 
-5. Running portfolio optimization test on historical data
-6. Running historical trading simulation
-7. Running real-time trading simulaton
+1. [Getting started](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/getting_started.md)
+2. [Data collection](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/data_collection.md) 
+3. [Setting up new projects](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/creating_new_projs.md)
+4. [Data pre-processing](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/preprocessing.md)
+5. [Running portfolio optimization test on historical data](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/optim.md)
+6. [Running historical trading simulation](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/hist_sim.md)
+7. [Running real-time trading simulaton](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/live_sim.md)
 
 ## About Author
 This project is built and maintained by Abdullah Bahi, Junior data analyst with a robust background in machine and deep learning. Also, a professional python developer with wide knowledge and hands-on experience with most of the packages used in AI and Data Science.
