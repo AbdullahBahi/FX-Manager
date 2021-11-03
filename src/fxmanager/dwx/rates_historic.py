@@ -6,15 +6,16 @@ This Module is used as an API to get historic data from the MT4 EA.
 
 This is a modified version of an example of using the Darwinex ZeroMQ Connector for Python 3 and MetaTrader 4 PULL REQUEST for v2.0.1 in which a Client requests rate history from a Daily from a start date to an end date. The user creates a 'rates_historic' object and using the methods 'get_daily_candles' and 'get_period_candles' the user client can get the historic data of the desired symbols. 
 
-The original example is referenced [here](https://github.com/darwinex/dwx-zeromq-connector/blob/master/v2.0.1/python/examples/template/strategies/rates_historic.py).
+The original example is referenced `here <https://github.com/darwinex/dwx-zeromq-connector/blob/master/v2.0.1/python/examples/template/strategies/rates_historic.py>`_.
 
 Through commmand HIST, this client can select multiple rates from an INSTRUMENT (symbol, timeframe).
 For example, to receive rates from instruments EURUSD(M1), between two dates, it will send this command to the Server, through its PUSH channel:
 
 "HIST;EURUSD;1;2019.01.04 00:00:00;2019.01.14 00:00:00"
   
-Original Author: [raulMrello](https://www.linkedin.com/in/raul-martin-19254530/)
-Modified by    : [AbdullahBahi](https://www.linkedin.com/in/abdullahbahi/)  
+Original Author: `raulMrello <https://www.linkedin.com/in/raul-martin-19254530/>`_
+
+Modified by    : `AbdullahBahi <https://www.linkedin.com/in/abdullahbahi/>`_
 """
 
 #############################################################################
@@ -94,7 +95,7 @@ class rates_historic(DWX_ZMQ_Strategy):
     ##########################################################################    
     def get_daily_candles(self, save_to='', currency_pair='', date=''):        
         """
-        Request historic data      
+        Request historic data and returns data of type 'daily_candles'
         """        
         self._finished = False
                 
@@ -115,7 +116,7 @@ class rates_historic(DWX_ZMQ_Strategy):
   
     def get_period_candles(self, save_to='', currency_pair='', start='', end=''):        
         """
-        Request historic data      
+        Request historic data and returns data of type 'period_candles'
         """        
         self._finished = False
                 

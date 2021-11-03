@@ -4,11 +4,9 @@
 """    
 This is a modified version of an example of using the Darwinex ZeroMQ Connector for Python 3 and MetaTrader 4 PULL REQUEST.
 
-The original example is referenced [here](https://github.com/darwinex/dwx-zeromq-connector/blob/master/v2.0.1/python/examples/template/strategies/prices_subscriptions.py), This Module is used as an API to get real time data from the MT4 EA. The user creates a 'prices_subscriptions' object with the desired symbols list in the client applicaction, then the real-time price feed can be accessed from the self._recent_prices dictionary.
+The original example is referenced `here <https://github.com/darwinex/dwx-zeromq-connector/blob/master/v2.0.1/python/examples/template/strategies/prices_subscriptions.py>`_, This Module is used as an API to get real time data from the MT4 EA. The user creates a 'prices_subscriptions' object with the desired symbols list in the client applicaction, then the real-time price feed can be accessed from the self._recent_prices dictionary.
 
--------------------
-Bid-Ask price feed:
--------------------
+
 Through commmand TRACK_PRICES, this client can select multiple SYMBOLS for price tracking.
 For example, to receive real-time bid-ask prices from symbols EURUSD and GDAXI, this client will send this command to the Server, through its PUSH channel:
 
@@ -27,9 +25,10 @@ Once subscribed to this feed, it will receive through the SUB channel, prices in
 "EURUSD BID;ASK"
     
 --
+  
+Original Author: `raulMrello <https://www.linkedin.com/in/raul-martin-19254530/>`_
 
-Original Author: [raulMrello](https://www.linkedin.com/in/raul-martin-19254530/)
-Modified by    : [AbdullahBahi](https://www.linkedin.com/in/abdullahbahi/)
+Modified by    : `AbdullahBahi <https://www.linkedin.com/in/abdullahbahi/>`_
 """
 
 #############################################################################

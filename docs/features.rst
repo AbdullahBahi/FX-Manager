@@ -24,7 +24,7 @@ Features
 
    -  with FX-Manager, there is no need to be constrained with broker's
       limitations, instead of performing actual trading in your broker's
-      account each time a trading strategy ia tested, FX-Manager creates
+      account each time a trading strategy is tested, FX-Manager creates
       an instance of a virtual account with all properties as an actual
       account and performs trading simulation on this instance without
       affecting the actual account on MT4 trading platform.
