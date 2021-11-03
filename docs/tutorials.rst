@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-1. `Getting started <https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/getting_started.md>`_
+1. `Getting started <https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/getting_started.md>`_
 
 2. `Data collection <https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/data_collection.md>`_
 
