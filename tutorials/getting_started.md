@@ -47,7 +47,7 @@ To get these scripts to work properly, the following configurations needs to be 
 	"full_path_to_python.exe" "%1" %*
 	```
 	
-	![Registry Editor 1](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/2.png?raw=true)
+	![Registry Editor 1](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/2.png?raw=true)
 	
 	Likely, previously, `%*` was missing. Similarly, set:
 	```
@@ -55,7 +55,7 @@ To get these scripts to work properly, the following configurations needs to be 
 	```
 	to the same value. 
 	
-	![Registry Editor 2](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/3.png?raw=true)
+	![Registry Editor 2](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/3.png?raw=true)
 
 - Now open a CLI window and run the command:
 `where script_name`
@@ -77,16 +77,16 @@ you will see a full list of the arguments to pass depending on the what you want
 	```
 	this creates the files and folder shown below:
 
-	![Root Directory](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/4.png?raw=true)
+	![Root Directory](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/4.PNG?raw=true)
 
-	![Data Directory](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/5.png?raw=true)
+	![Data Directory](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/5.PNG?raw=true)
 
 - Download the sample dataset from [here](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/sample_data/) and copy the CSV files into the `raw_data` folder.
  See [Data collection](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/data_collection.md) tutorial to find out more about supported data types and formats.
 
 - Now we need to pre-process the data before running the simulation, in order to do so, we need to configure the `raw_data_formats.json` file which contains information about column names in the raw data files as shown:
 
-	![Raw Data Formats](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/6.png?raw=true)
+	![Raw Data Formats](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/6.PNG?raw=true)
 
 	for now, we shall use the default values, but if you use different dataset, make sure to modify it depending on the data type you passed with `create_fx_proj` in the `-rdt` argument.
 - Now run the command to pre-process the data:
@@ -97,13 +97,13 @@ you will see a full list of the arguments to pass depending on the what you want
 
 - Now that data pre-processing is done, we need to define the trading strategy to be tested in the `strategy.py` file, since the topic of building algorithmic trading strategies is not crucial here, we will use the sample code provided [here](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/sample_strategy.py), copy and paste the code in it's specified place in the `strategy.py` file as shown:
 
-	![Trading Strategy](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/7.png?raw=true)
+	![Trading Strategy](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/7.PNG?raw=true)
 	
 - Now all what's left is to modify the `kwargs_template` and `get_portfolios_template` functions as shown below to pass the required trading strategy arguments and the portfolio to be used for simulation.
 
-	![Required arguments for the trading strategy](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/8.png?raw=true)
+	![Required arguments for the trading strategy](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/8.PNG?raw=true)
 
-	![Currency Pairs Portfolio](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/9.png?raw=true)
+	![Currency Pairs Portfolio](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/9.PNG?raw=true)
 	
 - That's it! now we're all setup and ready to run the back test using the command:
 	```
@@ -111,12 +111,12 @@ you will see a full list of the arguments to pass depending on the what you want
 	```
 	while the test is running you will see the daily results of the test as shown:
 
-	![Daily results](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/10.png?raw=true)
+	![Daily results](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/10.PNG?raw=true)
 	
 - After the test finishes, you will find 3 CSV Files in the `data\stats\historical_simulation_orders\` directory, each file contains the history of all the trades made in each day from the dataset as shown:
-	![Daily Orders Files](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/11.png?raw=true)
+	![Daily Orders Files](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/11.PNG?raw=true)
 
-	![Daily Orders](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/assets/getting_started/12.png?raw=true)
+	![Daily Orders](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/12.PNG?raw=true)
 
 ## Next Steps
 For a detailed tutorial on back testing trading strategies see the [Running historical trading simulation](https://github.com/AbdullahBahi/fx-manager/tree/main/tutorials/hist_sim.md) tutorial.
