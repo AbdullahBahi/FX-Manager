@@ -11,9 +11,8 @@ In this step-by-step Guild, we'll install all the above requirments.
 
 1. **Installing FX-Manager python framework.**
     - Using pip  
-        `pip install fxmanager`
-    - Using conda  
-        `conda install fxmanager`
+        `pip install FX-Manager`
+
 2. **Installing MetaTrader4 (MT4) Trading Platform.**
 
     > **NOTE**: If you already have installed MT4 software and registered an active trading account, feel free to skip to next step.
