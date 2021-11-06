@@ -1,7 +1,10 @@
 
 # FX-Manager
 
-![FX-Manager Block Diagram](https://github.com/AbdullahBahi/fx-manager/blob/main/docs/assets/mini_logo.png?raw=true)
+<p align="center">
+  <img src="https://github.com/AbdullahBahi/fx-manager/blob/main/docs/assets/mini_logo.png?raw=true"/>
+</p>
+
 
 FX-Manager is a python package for developing and testing forex algorithmic trading strategies.
 

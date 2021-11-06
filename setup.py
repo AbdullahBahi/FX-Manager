@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 try:
     setup(name = 'FX-Manager',
-        version = '1.0.6',
+        version = '1.0.7',
         author = 'Abdullah Bahi',
         author_email = 'abdullahbahi@icloud.com',
         description = 'Python package for developing and testing forex algorithmic trading strategies.',
