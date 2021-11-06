@@ -1,14 +1,17 @@
 
 # FX-Manager
+
+![FX-Manager Block Diagram](https://github.com/AbdullahBahi/fx-manager/blob/main/docs/assets/mini_logo.png?raw=true)
+
 FX-Manager is a python package for developing and testing forex algorithmic trading strategies.
 
 ## Contents
-- [**Features**](#Features)  
-- [**Installation**](#Installation)  
-- [**Documentation**](#Documentation)  
-- [**Tutorials**](#Tutorials)  
-- [**License**](#License)  
-- [**About Author**](#Author)  
+- [**Features**](https://github.com/AbdullahBahi/FX-Manager#Features)  
+- [**Installation**](https://github.com/AbdullahBahi/FX-Manager#Installation)  
+- [**Documentation**](https://github.com/AbdullahBahi/FX-Manager#Documentation)  
+- [**Tutorials**](https://github.com/AbdullahBahi/FX-Manager#Tutorials)  
+- [**License**](https://github.com/AbdullahBahi/FX-Manager#License)  
+- [**About Author**](https://github.com/AbdullahBahi/FX-Manager#Author)  
 
 # Features
 1. ### Historical market data collection and pre-processing
@@ -62,7 +65,7 @@ In this step-by-step Guild, we'll install all the above requirments.
     Follow the steps in this [Youtube Tutorial](https://www.youtube.com/watch?v=N0-aYLllK3E&list=PLv-cA-4O3y97vTpghgRqiPBjmpgWskYDl&index=4) by [Darwinex's Official channel](https://www.youtube.com/channel/UCBlO0JjC1xNVPOtCFTpEeWw) to install and configure the EA. 
     > NOTE: Skip the part from 1:30 to 4:10 in the tutorial.
 
-Now you are all setup to start developing algorithmic trading strategies in python using FX-Manager. Refer to [**Tutorials**](#Tutorials) Section to get started.
+Now you are all setup to start developing algorithmic trading strategies in python using FX-Manager. Refer to [**Tutorials**](https://github.com/AbdullahBahi/FX-Manager#Tutorials) Section to get started.
 
 ## Documentation
 The full detailed documentation is provided [here](https://fx-manager.readthedocs.io/en/latest/modules.html).

@@ -6,6 +6,8 @@
 FX-Manager 
 ==========
 
+.. image:: https://github.com/AbdullahBahi/fx-manager/blob/main/docs/assets/mini_logo.PNG?raw=true
+
 FX-Manager is a python package for developing and testing forex algorithmic trading strategies.
 
 .. toctree::
