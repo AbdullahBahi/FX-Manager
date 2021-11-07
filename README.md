@@ -158,7 +158,7 @@ modification follow.
 ## About Author
 
 <p align="center">
-  <img src="https://github.com/AbdullahBahi/fx-manager/blob/main/docs/assets/mini_logo.png?raw=true"/>
+  <img src="https://github.com/AbdullahBahi/FX-Manager/blob/main/docs/assets/ab.png?raw=true"/>
 </p>
 
 This project is built and maintained by Abdullah Bahi, Junior data analyst with a robust background in machine and deep learning. Also, a professional python developer with wide knowledge and hands-on experience with most of the packages used in AI and Data Science.

@@ -1,7 +1,7 @@
 About Author
 ============
 
-.. image:: https://github.com/AbdullahBahi/fx-manager/blob/main/docs/assets/ab.png?raw=true
+.. image:: https://github.com/AbdullahBahi/FX-Manager/blob/main/docs/assets/ab.png?raw=true
    :align: center
 
 
