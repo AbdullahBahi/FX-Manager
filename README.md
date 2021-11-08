@@ -18,6 +18,9 @@ FX-Manager is a python package for developing and testing forex algorithmic trad
 - [**About Author**](https://github.com/AbdullahBahi/FX-Manager#About-author) 
 
 # Features
+
+![FX-Manager Block Diagram](https://github.com/AbdullahBahi/fx-manager/blob/main/tutorials/assets/getting_started/1.png?raw=true)
+
 1. ### Historical market data collection and pre-processing
     - with FX-Manager, you can easily collect historical data from MT4 history center and preprocess it in just a few lines of code.
 
