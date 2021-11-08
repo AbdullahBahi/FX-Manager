@@ -221,7 +221,7 @@ def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={
         - raw_data_format       : dictionary with information about raw data used for portfolio optimization. This argument is only used when 'construct_portfolio' is set to True.
         - optimization_method   : string with optimization method to be used. This argument is only used when 'construct_portfolio' is set to True.
         - optimization_objective: string with optimization objective to be used. This argument is only used when 'construct_portfolio' is set to True.
-        - sleep_time            : integer indicating the time every which the portfolio is updated (in seconds).
+        - sleep_time            : integer indicating the time every which the portfolio is updated (in minutes).
         - risk_factor           : a float with range from 0 to 1 indicating the percentage of reinvested balance.
         - sync_zero             : boolean flag, if True, the simulation starts when the seconds in current time = 0.
         - save_logs             : boolean flag, if the program logs are saved to 'data_dir\\logs\\live_simulation_logs.txt' file.
@@ -356,10 +356,11 @@ def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={
                 print_live_state(account=account, win_rate=win_rate)
                 
             except UnboundLocalError:
+                print('\n>> PROCESS MESSAGE >> No orders are placed yet!\n')
                 pass
 
             # if 24 hours (1440 minutes) have passed, finish the program
-            if len(portfolio_prices) >= 1440:
+            if len(portfolio_prices) >= (1440/sleep_time):
                 print('\n-----------------------------------------------------------------------------------------------------------')
                 print('>> PROCESS MESSAGE >> Congratulations! you have made it through the day. Closing any remaining positions ..\n')
                 price_feed.stop()

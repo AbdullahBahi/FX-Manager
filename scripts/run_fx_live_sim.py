@@ -79,7 +79,7 @@ Options:
                                        in 'data\\live_raw_data' is used to construct a portfolio to be
                                        used for simulation
 
-        -st, --sleep_time            : time between each price update (float).
+        -st, --sleep_time            : time between each price update in minutes (float).
 
         -rf, risk_factor             : percentage of the amount of reinvested cash (float).
 
