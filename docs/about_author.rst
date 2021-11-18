@@ -9,31 +9,26 @@ This project is built and maintained by Abdullah Bahi, Junior data analyst with 
 
 ###################
 
-**Skills & Experience**
+**Expertise Areas**
 
-- **Certifications :** AWS Certified Data Analytics Specialist
-- **Expertise Areas :**
+- Data Analysis
+- Data Visualization
+- ETL
+- Data Base (SQL)
+- Machine Learning
+- Deep Learning
+- lgorithmic Trading
+- Open Source Software Development (OSS)
+- Business Analysis
+- Financial Data Analysis
 
-    - Data Analysis
-    - Data Visualization
-    - ETL
-    - Data Base (SQL)
-    - Machine Learning
-    - Deep Learning
-    - Amazon Web Services (AWS)
-    - Open Source Software Development (OSS)
-    - Business Analysis
-    - Financial Data Analysis
+###################
 
-- **Technologoes & Tools :** 
+**Work Experience**  
 
-    - Python 3.x
-    - IPython Notebooks
-    - Power BI
-    - SSIS
-    - Linux
-    - Anaconda
-    - Microsoft Office
+For a full list of my previous work visit my central repository on GitHub from `here <https://github.com/AbdullahBahi/My-Portfolio>`_.
+
+
 
 ###################
 
