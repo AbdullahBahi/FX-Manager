@@ -35,7 +35,7 @@ def get_prices(day, data_dir=None, time_frame='', currency_pair=''):
 
     if data_dir is None:
         data_dir = join(getcwd(), 'data')
-    df = pd.read_csv(join(data_dir, 'time_frames', str(day), time_frame , currency_pair+'_'+time_frame+'.csv'), parse_dates=True)
+    df = pd.read_csv(join(data_dir, 'time_frames', str(day), '1min' , currency_pair+'_'+time_frame+'.csv'), parse_dates=True)
     df.index = pd.to_datetime(df['time'])
     df.drop(['time', 'best_rets', 'wrst_rets', 'ask_sample1', 'bid_sample1', 'ask_sample2', 'bid_sample2'], axis = 1, inplace = True)
     return df
@@ -107,7 +107,7 @@ def close_position(account, ticket, portfolio_prices, portfolio_orders, wins, lo
 ##                                                 Main Function
 ##########################################################################################################################
 
-def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_logs=False, **kwargs):
+def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, dynamic_sltp=False, save_logs=False, **kwargs):
     """
     starts trading simulation with historic prices.
 
@@ -117,6 +117,7 @@ def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_
         - data_dir              : string with the directory or full path to the directory in which application data is kept. If the setup() function is used to create the recommended project structure, the default None value should be used.
         - portfolios            : pandas dataframe with columns (currency_pairs, time_frames, weights) and range index of length = num_days
         - risk_factor           : a float with range from 0 to 1 indicating the percentage of reinvested balance.
+        - dynamic_stlp  : boolean flag, if True, stop losses and take profits of opened positions are updated with each simulation step.
         - save_logs             : boolean flag, if the program logs are saved to 'data_dir\\logs\\live_simulation_logs.txt' file.
         - kwargs                : dictionary to hold any number of arguments required for the strategy object.
     Returns:
@@ -178,6 +179,10 @@ def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_
         # Main Loop
         for idx in portfolio_prices.index:
             try:
+
+                # Update account state with current prices
+                account.update(prices = portfolio_prices.loc[:idx], dynamic_sltp=dynamic_sltp)
+
                 # Loop Through the opened positions and close the ones with period = 0
                 tickets = list(account._positions.keys())
                 for ticket in tickets:
@@ -189,6 +194,7 @@ def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_
                                                                                 portfolio_orders=portfolio_orders,
                                                                                 wins=wins,
                                                                                 losses=losses)
+                
                 # Loop Through portfolio assets and add positions
                 for cp, tf, w in zip(currency_pairs, time_frames, weights):
                     if tf[1].isalpha():
@@ -222,6 +228,7 @@ def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_
                                                                 period = period,
                                                                 order_idx = order_idx,
                                                                 risk_factor = risk_factor)
+                            
                             # if the position couldn't be opened, break out of the main loop and print account state
                             if not is_opened:
                                 print('\n>> PROCESS MESSAGE >> Balance is not enough to open a new position!\n')
@@ -241,8 +248,7 @@ def run(account, strategy, data_dir=None, portfolios={}, risk_factor=0.95, save_
                                 break
                 if not is_opened:
                     break
-                # Update account state with current prices
-                account.update(prices = portfolio_prices.loc[:idx])
+                
             except UnboundLocalError:
                 pass
         if not is_opened:

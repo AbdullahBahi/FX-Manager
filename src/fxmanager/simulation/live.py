@@ -206,7 +206,7 @@ def close_position(account, ticket, portfolio_prices, portfolio_orders, wins, lo
 ##########################################################################################################################
 
 def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={}, weight_optimization=False, is_preprocessed=True,raw_data_format='',
-        optimization_method='', optimization_objective='', sleep_time=1, risk_factor=1, sync_zero=False, save_logs=False, **kwargs):
+        optimization_method='', optimization_objective='', sleep_time=1, risk_factor=1, dynamic_sltp=False, sync_zero=False, save_logs=False, **kwargs):
     """
     starts trading simulation with live prices from MT4 EA.
 
@@ -223,6 +223,7 @@ def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={
         - optimization_objective: string with optimization objective to be used. This argument is only used when 'construct_portfolio' is set to True.
         - sleep_time            : integer indicating the time every which the portfolio is updated (in minutes).
         - risk_factor           : a float with range from 0 to 1 indicating the percentage of reinvested balance.
+        - dynamic_stlp  : boolean flag, if True, stop losses and take profits of opened positions are updated with each simulation step.
         - sync_zero             : boolean flag, if True, the simulation starts when the seconds in current time = 0.
         - save_logs             : boolean flag, if the program logs are saved to 'data_dir\\logs\\live_simulation_logs.txt' file.
         - kwargs                : dictionary to hold any number of arguments required for the strategy object.
@@ -287,6 +288,9 @@ def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={
                 price_every_iter_df = get_price(currency_pairs=currency_pairs, price_feed=price_feed, sleep_time=sleep_time)
                 portfolio_prices = pd.concat([portfolio_prices, price_every_iter_df], ignore_index=True)
 
+                # Update account state with current prices and check periods again
+                account.update(prices = portfolio_prices, dynamic_sltp=dynamic_sltp)
+
                 # Loop Through the opened positions and close the ones with period = 0
                 tickets = list(account._positions.keys())
                 for ticket in tickets:
@@ -348,9 +352,6 @@ def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={
                                 break
                 if not is_opened:
                     break
-
-                # Update account state with current prices
-                account.update(prices = portfolio_prices)
 
                 # print account state every minute
                 print_live_state(account=account, win_rate=win_rate)

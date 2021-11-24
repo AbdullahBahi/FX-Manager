@@ -5,6 +5,7 @@ About Author
    :align: center
 
 
+
 This project is built and maintained by Abdullah Bahi, Junior data analyst with a robust background in machine and deep learning. Also, a professional python developer with wide knowledge and hands-on experience with most of the packages used in AI and Data Science.
 
 ###################

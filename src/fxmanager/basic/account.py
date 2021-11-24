@@ -120,8 +120,8 @@ class Account():
                 'time_frame': time_frame,
                 'open_price': open_price,
                 'margin': margin,
-                'SL': open_price - (SL * 0.001 * open_price), ## Formula: open_price - (SL * Maximum expected pip difference * open_price)
-                'TP': open_price + (TP * 0.001 * open_price), ## Formula: open_price + (TP * Maximum expected pip difference * open_price)
+                'SL': SL,
+                'TP': TP,
                 'live_profit': 0,
                 'period': period,
                 'weight': weight
@@ -184,7 +184,7 @@ class Account():
 
         return position_profit, margin, close_price
     
-    def update(self, prices):
+    def update(self, prices, dynamic_sltp=False):
         """
         updates the state of the account (including oppened positions) with the current market prices.
         """
@@ -204,6 +204,8 @@ class Account():
             quote_currency = self._positions[i]['quote_currency']
             cp = base_currency + quote_currency
             open_price = self._positions[i]['open_price']
+            SL = self._positions[i]['SL']
+            TP = self._positions[i]['TP']
             
             # Get current price
             price_types = {"sell":"ask", "buy":"bid"} ## note that bid and ask are reversed because it's a CLOSE price
@@ -211,8 +213,33 @@ class Account():
             current_price.index = ['ask', 'bid']
             current_price = current_price[price_types[order_type]]
             
+            if order_type == 'buy':
+                if current_price < SL or current_price > TP:
+                    self._positions[i]['period'] = 0
+                else:
+                    if dynamic_sltp:
+                        if (current_price-SL)/(TP-SL) >= 0.9:
+                            SL = SL + (0.5*(TP-SL))
+                            TP = TP + (0.5*(TP-SL))
+                        else:
+                            pass
+            elif order_type == 'sell':
+                if current_price > SL or current_price < TP:
+                    self._positions[i]['period'] = 0
+                else:
+                    if dynamic_sltp:
+                        if (SL-current_price)/(SL-TP) >= 0.9:
+                            SL = SL - (0.5*(SL-TP))
+                            TP = TP - (0.5*(SL-TP))
+                        else:
+                            pass
+               
             if base_currency.lower() == self._ACCOUNT_CURRENCY:
-                current_price = 1 / current_price
+                current_price = 1/current_price
+                SL = 1/SL
+                TP = 1/TP
+            else:
+                pass
 
             # Calculate current profit
             open_lot_value = self._get_lot_value(open_price, self._LOT_SIZE)

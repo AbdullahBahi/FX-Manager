@@ -30,6 +30,9 @@ Options:
 
         -uds, --user_defined_strategy: boolean flag, if True, simulation is done using user-defined
                                        trading strategy which is defined in 'strategy.py' file.
+        
+        -dstlp, --dynamic_stlp       : boolean flag, if True, stop losses and take profits of opened
+                                       positions are updated with each simulation step.
 
         -tap, --take_all_prices      : boolean flag that controls the frequency of the range index of
                                        'prices' DataFrame which is passed to strategy function.
@@ -96,6 +99,7 @@ parser.add_argument('-lvrg','--leverage', type=float, default = 1.0)
 parser.add_argument('-vbs','--volume_bounds', type=float, nargs='+', default = [0.01, 8.0])
 parser.add_argument('-rf','--risk_factor', type=float, default = 0.98)
 parser.add_argument('-uds','--user_defined_strategy', default=False, action='store_true')
+parser.add_argument('-dstlp','--dynamic_stlp', default=False, action='store_true')
 parser.add_argument('-tap','--take_all_prices', default=False, action='store_true')
 parser.add_argument('-nd','--num_days', type=int, default = 2)
 parser.add_argument('-ops','--optimized_portfolios', default=False, action='store_true')
@@ -136,6 +140,7 @@ sim.run(account = acc,
         strategy = strategy,
         portfolios = portfolios,
         risk_factor = in_args.risk_factor,
+        dynamic_stlp = in_args.dynamic_stlp,
         save_logs = in_args.save_logs,
         **kwargs)
 
