@@ -21,8 +21,8 @@ copyright = '2021 Abdullah Bahi'
 author = 'Abdullah Bahi'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0.14'
-version = '1.0.14'
+release = '1.0.15'
+version = '1.0.15'
 
 
 # -- General configuration ---------------------------------------------------

@@ -35,7 +35,7 @@ def get_prices(day, data_dir=None, time_frame='', currency_pair=''):
 
     if data_dir is None:
         data_dir = join(getcwd(), 'data')
-    df = pd.read_csv(join(data_dir, 'time_frames', str(day), '1min' , currency_pair+'_'+time_frame+'.csv'), parse_dates=True)
+    df = pd.read_csv(join(data_dir, 'time_frames', str(day), '1min' , currency_pair+'_1min.csv'), parse_dates=True)
     df.index = pd.to_datetime(df['time'])
     df.drop(['time', 'best_rets', 'wrst_rets', 'ask_sample1', 'bid_sample1', 'ask_sample2', 'bid_sample2'], axis = 1, inplace = True)
     return df

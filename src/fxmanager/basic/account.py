@@ -255,6 +255,9 @@ class Account():
         self._live_free_margin = self._live_equity - self._margin
 
         ## 4 ## Live Margin Level
-        self._live_margin_level = self._live_equity / self._margin
+        try:
+            self._live_margin_level = self._live_equity / self._margin
+        except ZeroDivisionError:
+            pass
 
 

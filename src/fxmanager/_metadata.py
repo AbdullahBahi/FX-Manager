@@ -1,5 +1,5 @@
 __package_name__                 = 'FX-Manager'
-__version__                      = '1.0.14'
+__version__                      = '1.0.15'
 __author__                       = 'Abdullah Bahi'
 __author_email__                 = 'abdullahbahi@icloud.com'
 __description__                  = 'Python package for developing and testing forex algorithmic trading strategies.'
