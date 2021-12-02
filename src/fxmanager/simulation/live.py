@@ -165,7 +165,6 @@ def close_position(account, ticket, portfolio_prices, portfolio_orders, wins, lo
     """
 
     cp = account._positions[ticket]['base_currency'] + account._positions[ticket]['quote_currency']
-    open_price = account._positions[ticket]['open_price']
     volume = account._positions[ticket]['volume']
     tf = account._positions[ticket]['time_frame']
     order_type = account._positions[ticket]['order_type']
@@ -175,7 +174,7 @@ def close_position(account, ticket, portfolio_prices, portfolio_orders, wins, lo
 
     close_price = portfolio_prices.iloc[-1][[cp+'_ask_close', cp+'_bid_close']]
     close_price.index = ['ask', 'bid']
-    position_porfit, margin_req, close_price = account.close_position(ticket=ticket, prices=close_price)
+    position_porfit, margin_req, open_price, close_price = account.close_position(ticket=ticket, prices=close_price)
     
     order = pd.DataFrame({'Ticket': ticket,
                         'Order Type':order_type,
@@ -310,46 +309,51 @@ def run(account, strategy, data_dir=None, construct_portfolio=False, portfolio={
                     else:
                         period = int(int(tf[:2]) / sleep_time)
                     
-                    if (portfolio_prices.index[-1] % period) == 0:
-                        strategy._currency_pair = cp
-                        strategy._time_frame = tf
-                        orders = strategy.get_orders(prices = portfolio_prices, **kwargs)
-                        order = orders.iloc[-1]
-                        order_idx = orders.index[-1]
-                        order_ticket = cp + '_' + tf + str(order_idx)
-                        if order['order_type'] == 'hold':
-                            continue
-                            
-                        # if the position is already opened, don't open it again
-                        if order_ticket not in account._positions:
-                            open_price = portfolio_prices.iloc[order_idx][[cp+'_ask_open', cp+'_bid_open']]
-                            open_price.index = ['ask', 'bid']
-                            is_opened = account.open_pisition(ticket = order_ticket,
-                                                                base_currency = cp[:3],
-                                                                quote_currency = cp[3:],
-                                                                time_frame=tf,
-                                                                weight = w,
-                                                                SL = order['SL'],
-                                                                TP = order['TP'],
-                                                                order_type = order['order_type'],
-                                                                prices = open_price,
-                                                                period = period,
-                                                                order_idx = order_idx,
-                                                                risk_factor = risk_factor)
-                            # if the position couldn't be opened, break out of the main loop and print account state
-                            if not is_opened:
-                                print('\n>> PROCESS MESSAGE >> Balance is not enough to open a new position!\n')
-                                price_feed.stop()
-                                print('\n>> PROCESS MESSAGE >> Closing any open positions ..\n')
-                                tickets = list(account._positions.keys())
-                                for ticket in tickets:
-                                    portfolio_orders, wins, losses, win_rate = close_position(account=account,
-                                                                                            ticket=ticket,
-                                                                                            portfolio_prices=portfolio_prices,
-                                                                                            portfolio_orders=portfolio_orders,
-                                                                                            wins=wins,
-                                                                                            losses=losses)
-                                break
+                    # if (portfolio_prices.index[-1] % period) == 0:
+                    strategy._currency_pair = cp
+                    strategy._time_frame = tf
+                    orders = strategy.get_orders(prices = portfolio_prices, **kwargs)
+                    order = orders.iloc[-1]
+                    order_idx = orders.index[-1]
+                    order_ticket = cp + '_' + tf + str(order_idx)
+                    if order['order_type'] == 'hold':
+                        continue
+                        
+                    # if the position is already opened, don't open it again
+                    # if order_ticket not in account._positions:
+                    flag = True
+                    for pos in account._positions:
+                        if cp + '_' + tf in pos:
+                            flag = False
+                    if flag:
+                        open_price = portfolio_prices.iloc[order_idx][[cp+'_ask_open', cp+'_bid_open']]
+                        open_price.index = ['ask', 'bid']
+                        is_opened = account.open_pisition(ticket = order_ticket,
+                                                            base_currency = cp[:3],
+                                                            quote_currency = cp[3:],
+                                                            time_frame=tf,
+                                                            weight = w,
+                                                            SL = order['SL'],
+                                                            TP = order['TP'],
+                                                            order_type = order['order_type'],
+                                                            prices = open_price,
+                                                            period = period,
+                                                            order_idx = order_idx,
+                                                            risk_factor = risk_factor)
+                        # if the position couldn't be opened, break out of the main loop and print account state
+                        if not is_opened:
+                            print('\n>> PROCESS MESSAGE >> Balance is not enough to open a new position!\n')
+                            price_feed.stop()
+                            print('\n>> PROCESS MESSAGE >> Closing any open positions ..\n')
+                            tickets = list(account._positions.keys())
+                            for ticket in tickets:
+                                portfolio_orders, wins, losses, win_rate = close_position(account=account,
+                                                                                        ticket=ticket,
+                                                                                        portfolio_prices=portfolio_prices,
+                                                                                        portfolio_orders=portfolio_orders,
+                                                                                        wins=wins,
+                                                                                        losses=losses)
+                            break
                 if not is_opened:
                     break
 

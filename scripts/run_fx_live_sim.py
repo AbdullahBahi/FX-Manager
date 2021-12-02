@@ -204,7 +204,7 @@ sim.run(account=acc,
         optimization_objective=in_args.optimization_objective,
         sleep_time=in_args.sleep_time, ## In Minutes
         risk_factor=in_args.risk_factor, ## percentage of money to be invested from account balance during simulation
-        dynamic_stlp = in_args.dynamic_sltp,
+        dynamic_sltp = in_args.dynamic_sltp,
         sync_zero=in_args.sync_zero,
         save_logs=in_args.save_logs,
         **kwargs) ## Multiple of the timeframe (i.e. if an order to be placed in 10 min tf, look back would be 30 minutes with check every 10min)

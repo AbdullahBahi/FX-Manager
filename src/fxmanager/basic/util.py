@@ -484,88 +484,88 @@ def process_daily_bid_ask(df, tf):
     bid_open = []
     ask_close = []
     bid_close = []
-    ask_high = []
-    bid_high = []
-    ask_low	= []
-    bid_low = []
-    ask_sample1 = []
-    bid_sample1 = []
-    ask_sample2 = []
-    bid_sample2 = []
-    best_rets = []
-    wrst_rets = []
-    tick_volume = []
+    # ask_high = []
+    # bid_high = []
+    # ask_low	= []
+    # bid_low = []
+    # ask_sample1 = []
+    # bid_sample1 = []
+    # ask_sample2 = []
+    # bid_sample2 = []
+    # best_rets = []
+    # wrst_rets = []
+    # tick_volume = []
 
     # get a DataFrame that is grouped by the specified timeframe
     grouped = pd.DataFrame(df.groupby(pd.Grouper(freq=tf)), columns=['time', 'sub_dataframes'])
 
     for dataframe in grouped['sub_dataframes']:
-        tick_volume.append(dataframe.shape[0])
+        # tick_volume.append(dataframe.shape[0])
         if dataframe.shape[0] != 0:
             ask_open.append(dataframe['ask'][0])
             bid_open.append(dataframe['bid'][0])
             ask_close.append(dataframe['ask'][-1])
             bid_close.append(dataframe['bid'][-1])
-            ask_high.append(dataframe['ask'].max())
-            bid_high.append(dataframe['bid'].max())
-            ask_low.append(dataframe['ask'].min())
-            bid_low.append(dataframe['bid'].min())
+            # ask_high.append(dataframe['ask'].max())
+            # bid_high.append(dataframe['bid'].max())
+            # ask_low.append(dataframe['ask'].min())
+            # bid_low.append(dataframe['bid'].min())
             
-            delta_t = (dataframe.index[-1]-dataframe.index[0])/2
-            open_plus_delta = delta_t + dataframe.index[0]
-            idx_diff = dataframe.index - open_plus_delta
-            pos_idx_diff = [a for a in idx_diff if a.days==0]
-            idx = min(pos_idx_diff) + open_plus_delta
+            # delta_t = (dataframe.index[-1]-dataframe.index[0])/2
+            # open_plus_delta = delta_t + dataframe.index[0]
+            # idx_diff = dataframe.index - open_plus_delta
+            # pos_idx_diff = [a for a in idx_diff if a.days==0]
+            # idx = min(pos_idx_diff) + open_plus_delta
 
-            ask_sample1.append(dataframe.loc[dataframe.index[0]:idx]['ask'].sample().values[0])
-            bid_sample1.append(dataframe.loc[dataframe.index[0]:idx]['bid'].sample().values[0])
-            ask_sample2.append(dataframe.loc[idx:dataframe.index[-1]]['ask'].sample().values[0])
-            bid_sample2.append(dataframe.loc[idx:dataframe.index[-1]]['bid'].sample().values[0])
+            # ask_sample1.append(dataframe.loc[dataframe.index[0]:idx]['ask'].sample().values[0])
+            # bid_sample1.append(dataframe.loc[dataframe.index[0]:idx]['bid'].sample().values[0])
+            # ask_sample2.append(dataframe.loc[idx:dataframe.index[-1]]['ask'].sample().values[0])
+            # bid_sample2.append(dataframe.loc[idx:dataframe.index[-1]]['bid'].sample().values[0])
             
-            if bid_high[-1] > ask_low[-1]:
-                ## if minimum ask price comes first >> buy >> devide by ask_low
-                if max(dataframe['bid'].idxmax(), dataframe['ask'].idxmin()) == dataframe['bid'].idxmax():
-                    best_rets.append((bid_high[-1]-ask_low[-1]) / ask_low[-1])
-                    wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
-                ## if maximum bid price comes first >> sell >> devide by bid_high
-                else:
-                    best_rets.append((bid_high[-1]-ask_low[-1]) / bid_high[-1])
-                    wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
+            # if bid_high[-1] > ask_low[-1]:
+            #     ## if minimum ask price comes first >> buy >> devide by ask_low
+            #     if max(dataframe['bid'].idxmax(), dataframe['ask'].idxmin()) == dataframe['bid'].idxmax():
+            #         best_rets.append((bid_high[-1]-ask_low[-1]) / ask_low[-1])
+            #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
+            #     ## if maximum bid price comes first >> sell >> devide by bid_high
+            #     else:
+            #         best_rets.append((bid_high[-1]-ask_low[-1]) / bid_high[-1])
+            #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
 
-            else:
-                best_rets.append(0)
-                if max(dataframe['bid'].idxmin(), dataframe['ask'].idxmax()) == dataframe['bid'].idxmin():
-                    wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
-                else:
-                    wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
+            # else:
+            #     best_rets.append(0)
+            #     if max(dataframe['bid'].idxmin(), dataframe['ask'].idxmax()) == dataframe['bid'].idxmin():
+            #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
+            #     else:
+            #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
             
         else:
             ask_open.append(ask_close[-1])
             bid_open.append(bid_close[-1])
             ask_close.append(ask_close[-1])
             bid_close.append(bid_close[-1])
-            ask_high.append(ask_close[-1])
-            bid_high.append(bid_close[-1])
-            ask_low.append(ask_close[-1])
-            bid_low.append(bid_close[-1])
-            ask_sample1.append(ask_close[-1])
-            bid_sample1.append(bid_close[-1])
-            ask_sample2.append(ask_close[-1])
-            bid_sample2.append(bid_close[-1])
-            best_rets.append(0)
-            wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
-
-    final_df = pd.DataFrame({'best_rets':best_rets,
-                             'wrst_rets':wrst_rets,
+            # ask_high.append(ask_close[-1])
+            # bid_high.append(bid_close[-1])
+            # ask_low.append(ask_close[-1])
+            # bid_low.append(bid_close[-1])
+            # ask_sample1.append(ask_close[-1])
+            # bid_sample1.append(bid_close[-1])
+            # ask_sample2.append(ask_close[-1])
+            # bid_sample2.append(bid_close[-1])
+            # best_rets.append(0)
+            # wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
+    dummy = [0,]*len(grouped)
+    final_df = pd.DataFrame({'best_rets':dummy,
+                             'wrst_rets':dummy,
                              'ask_open':ask_open,
                              'bid_open':bid_open,
                              'ask_close':ask_close,
                              'bid_close':bid_close,
-                             'ask_sample1':ask_sample1,
-                             'bid_sample1':bid_sample1,
-                             'ask_sample2':ask_sample2,
-                             'bid_sample2':bid_sample2,
-                             'tick_volume':tick_volume
+                             'ask_sample1':dummy,
+                             'bid_sample1':dummy,
+                             'ask_sample2':dummy,
+                             'bid_sample2':dummy,
+                             'tick_volume':dummy
                             }, index=pd.to_datetime(grouped['time']))
     return final_df
 
@@ -581,17 +581,17 @@ def process_ohlc(df, tf):
     bid_open = []
     ask_close = []
     bid_close = []
-    ask_high = []
-    bid_high = []
-    ask_low	= []
-    bid_low = []
-    ask_sample1 = []
-    bid_sample1 = []
-    ask_sample2 = []
-    bid_sample2 = []
-    best_rets = []
-    wrst_rets = []
-    tick_volume = []
+    # ask_high = []
+    # bid_high = []
+    # ask_low	= []
+    # bid_low = []
+    # ask_sample1 = []
+    # bid_sample1 = []
+    # ask_sample2 = []
+    # bid_sample2 = []
+    # best_rets = []
+    # wrst_rets = []
+    # tick_volume = []
 
     # Calculate spread using Corwin-Schultz model
     l = df['low']
@@ -613,59 +613,60 @@ def process_ohlc(df, tf):
                        'bid_low': df['low'].values,
                        'ask_low': (df['low'].to_numpy()+s).round(5),
                        'tick_volume':df['tick_volume'].values}, index=df.index)
+    
     # get a DataFrame that is grouped by the specified timeframe
     grouped = pd.DataFrame(df.groupby(pd.Grouper(freq=tf)), columns=['time', 'sub_dataframes'])
 
     for dataframe in grouped['sub_dataframes']:
-        tick_volume.append(dataframe['tick_volume'].sum())
+        # tick_volume.append(dataframe['tick_volume'].sum())
         ask_open.append(dataframe['ask_open'][0])
         bid_open.append(dataframe['bid_open'][0])
         ask_close.append(dataframe['ask_close'][-1])
         bid_close.append(dataframe['bid_close'][-1])
-        ask_high.append(dataframe['ask_high'].max())
-        bid_high.append(dataframe['bid_high'].max())
-        ask_low.append((dataframe['ask_low'].min()))
-        bid_low.append(dataframe['ask_low'].min())
+        # ask_high.append(dataframe['ask_high'].max())
+        # bid_high.append(dataframe['bid_high'].max())
+        # ask_low.append((dataframe['ask_low'].min()))
+        # bid_low.append(dataframe['ask_low'].min())
         
-        delta_t = (dataframe.index[-1]-dataframe.index[0])/2
-        open_plus_delta = delta_t + dataframe.index[0]
-        idx_diff = dataframe.index - open_plus_delta
-        pos_idx_diff = [a for a in idx_diff if a.days==0]
-        idx = min(pos_idx_diff) + open_plus_delta
+        # delta_t = (dataframe.index[-1]-dataframe.index[0])/2
+        # open_plus_delta = delta_t + dataframe.index[0]
+        # idx_diff = dataframe.index - open_plus_delta
+        # pos_idx_diff = [a for a in idx_diff if a.days==0]
+        # idx = min(pos_idx_diff) + open_plus_delta
 
-        ask_sample1.append(dataframe.loc[:idx]['ask_open'].sample().values[0])
-        bid_sample1.append(dataframe.loc[:idx]['bid_open'].sample().values[0])
-        ask_sample2.append(dataframe.loc[idx:]['ask_close'].sample().values[0])
-        bid_sample2.append(dataframe.loc[idx:]['bid_close'].sample().values[0])
+        # ask_sample1.append(dataframe.loc[:idx]['ask_open'].sample().values[0])
+        # bid_sample1.append(dataframe.loc[:idx]['bid_open'].sample().values[0])
+        # ask_sample2.append(dataframe.loc[idx:]['ask_close'].sample().values[0])
+        # bid_sample2.append(dataframe.loc[idx:]['bid_close'].sample().values[0])
         
-        if bid_high[-1] > ask_low[-1]:
-            ## if minimum ask price comes first >> buy >> devide by ask_low
-            if max(dataframe['bid_high'].idxmax(), dataframe['ask_low'].idxmin()) == dataframe['bid_high'].idxmax():
-                best_rets.append((bid_high[-1]-ask_low[-1]) / ask_low[-1])
-                wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
-            ## if maximum bid price comes first >> sell >> devide by bid_high
-            else:
-                best_rets.append((bid_high[-1]-ask_low[-1]) / bid_high[-1])
-                wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
-        else:
-            best_rets.append(0)
-            # print(dataframe, end='\n\n')
-            if max(dataframe['bid_low'].idxmin(), dataframe['ask_high'].idxmax()) == dataframe['bid_low'].idxmin():
-                wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
-            else:
-                wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
-
-    final_df = pd.DataFrame({'best_rets':best_rets,
-                             'wrst_rets':wrst_rets,
+        # if bid_high[-1] > ask_low[-1]:
+        #     ## if minimum ask price comes first >> buy >> devide by ask_low
+        #     if max(dataframe['bid_high'].idxmax(), dataframe['ask_low'].idxmin()) == dataframe['bid_high'].idxmax():
+        #         best_rets.append((bid_high[-1]-ask_low[-1]) / ask_low[-1])
+        #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
+        #     ## if maximum bid price comes first >> sell >> devide by bid_high
+        #     else:
+        #         best_rets.append((bid_high[-1]-ask_low[-1]) / bid_high[-1])
+        #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
+        # else:
+        #     best_rets.append(0)
+        #     if max(dataframe['bid_low'].idxmin(), dataframe['ask_high'].idxmax()) == dataframe['bid_low'].idxmin():
+        #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / bid_low[-1])
+        #     else:
+        #         wrst_rets.append((bid_low[-1]-ask_high[-1]) / ask_high[-1])
+    
+    dummy = [0,]*len(grouped)
+    final_df = pd.DataFrame({'best_rets':dummy,
+                             'wrst_rets':dummy,
                              'ask_open':ask_open,
                              'bid_open':bid_open,
                              'ask_close':ask_close,
                              'bid_close':bid_close,
-                             'ask_sample1':ask_sample1,
-                             'bid_sample1':bid_sample1,
-                             'ask_sample2':ask_sample2,
-                             'bid_sample2':bid_sample2,
-                             'tick_volume':tick_volume
+                             'ask_sample1':dummy,
+                             'bid_sample1':dummy,
+                             'ask_sample2':dummy,
+                             'bid_sample2':dummy,
+                             'tick_volume':dummy
                             }, index=pd.to_datetime(grouped['time']))
     return final_df
 
@@ -732,32 +733,34 @@ def preprocess(data_dir=None, app_type='', raw_data_type='', raw_data_format={},
                 print('                                             >> Processing Day {} <<'.format(day))
                 print('-----------------------------------------------------------------------------------------------------------')
 
-                for i in time_frames:
-                    print('\n>> PROCESS MESSAGE >> Processing {} Timeframe ..'.format(i))
-                    file_names = [f for f in listdir(join(data_dir, 'raw_data', str(day)))]
-                    for file_name in file_names:
-                        print('>> PROCESS MESSAGE >>     Processing {} Currency pair ..'.format(file_name[:6]))
-                        df = pd.read_csv(join(data_dir, 'raw_data', str(day), file_name))
-                        df.index = pd.to_datetime(df[date_col], format=date_format)
-                        df = df[[ask_col, bid_col]]
-                        df.columns = ['ask', 'bid']
-                        df = process_daily_bid_ask(df=df, tf=i)
-                        df.to_csv(join(data_dir, 'time_frames', str(day), i, file_name[:6]+'_'+i+'.csv'))
+                file_names = [f for f in listdir(join(data_dir, 'raw_data', str(day)))]
+                for file_name in file_names:
+                    print('>> PROCESS MESSAGE >> Processing {} Currency pair ..'.format(file_name[:6]))
+                    df = pd.read_csv(join(data_dir, 'raw_data', str(day), file_name))
+                    df.index = pd.to_datetime(df[date_col], format=date_format)
+                    df = df[[ask_col, bid_col]]
+                    df.columns = ['ask', 'bid']
+                    for i in time_frames:
+                        print('\n>> PROCESS MESSAGE >>     Processing {} Timeframe ..'.format(i))
+                        tf_df = process_daily_bid_ask(df=df, tf=i)
+                        tf_df.to_csv(join(data_dir, 'time_frames', str(day), i, file_name[:6]+'_'+i+'.csv'))
+                    
             print('\n>> SYSTEM MESSAGE >> all Days Are Processed Successfully!\n')            
             
             if app_type == 'all_in_one':
                 print('>> SYSTEM MESSAGE >> Processing Live App Data!')
-                for i in time_frames:
-                    print('\n>> PROCESS MESSAGE >> Processing {} Timeframe ..'.format(i))
-                    file_names = [f for f in listdir(join(data_dir, 'live_data', 'raw_data'))]
-                    for file_name in file_names:
-                        print('>> PROCESS MESSAGE >>     Processing {} Currency pair ..'.format(file_name[:6]))
-                        df = pd.read_csv(join(data_dir, 'live_data', 'raw_data', file_name))
-                        df.index = pd.to_datetime(df[date_col], format=date_format)
-                        df = df[[ask_col, bid_col]]
-                        df.columns = ['ask', 'bid']
-                        df = process_daily_bid_ask(df=df, tf=i)
-                        df.to_csv(join(data_dir, 'live_data', 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
+                
+                file_names = [f for f in listdir(join(data_dir, 'live_data', 'raw_data'))]
+                for file_name in file_names:
+                    print('>> PROCESS MESSAGE >> Processing {} Currency pair ..'.format(file_name[:6]))
+                    df = pd.read_csv(join(data_dir, 'live_data', 'raw_data', file_name))
+                    df.index = pd.to_datetime(df[date_col], format=date_format)
+                    df = df[[ask_col, bid_col]]
+                    df.columns = ['ask', 'bid']
+                    for i in time_frames:
+                        print('\n>> PROCESS MESSAGE >>      Processing {} Timeframe ..'.format(i))
+                        tf_df = process_daily_bid_ask(df=df, tf=i)
+                        tf_df.to_csv(join(data_dir, 'live_data', 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
 
         #############################################################################################################################    
         
@@ -773,17 +776,18 @@ def preprocess(data_dir=None, app_type='', raw_data_type='', raw_data_format={},
                     if x == i:
                         time_frames.append(tf)
             print('>> SYSTEM MESSAGE >> Processing Live App Data!')
-            for i in time_frames:
-                print('\n>> PROCESS MESSAGE >> Processing {} Timeframe ..'.format(i))
-                file_names = [f for f in listdir(join(data_dir, 'raw_data'))]
-                for file_name in file_names:
-                    print('>> PROCESS MESSAGE >>     Processing {} Currency pair ..'.format(file_name[:6]))
-                    df = pd.read_csv(join(data_dir, 'raw_data', file_name))
-                    df.index = pd.to_datetime(df[date_col], format=date_format)
-                    df = df[[ask_col, bid_col]]
-                    df.columns = ['ask', 'bid']
-                    df = process_daily_bid_ask(df=df, tf=i)
-                    df.to_csv(join(data_dir, 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
+            
+            file_names = [f for f in listdir(join(data_dir, 'raw_data'))]
+            for file_name in file_names:
+                print('>> PROCESS MESSAGE >> Processing {} Currency pair ..'.format(file_name[:6]))
+                df = pd.read_csv(join(data_dir, 'raw_data', file_name))
+                df.index = pd.to_datetime(df[date_col], format=date_format)
+                df = df[[ask_col, bid_col]]
+                df.columns = ['ask', 'bid']
+                for i in time_frames:
+                    print('\n>> PROCESS MESSAGE >>      Processing {} Timeframe ..'.format(i))
+                    tf_df = process_daily_bid_ask(df=df, tf=i)
+                    tf_df.to_csv(join(data_dir, 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
                 
     #############################################################################################################################
     ##                                                  OHLCV 1min-Candles Data                                                ##
@@ -814,53 +818,16 @@ def preprocess(data_dir=None, app_type='', raw_data_type='', raw_data_format={},
                         x = int(tf[:2])
                     if x == i:
                         time_frames.append(tf)
-            for day in range(num_days):
-                print('-----------------------------------------------------------------------------------------------------------')
-                print('                                             >> Processing Day {} <<'.format(day))
-                print('-----------------------------------------------------------------------------------------------------------')
-
-                for i in time_frames:
-                    print('\n>> PROCESS MESSAGE >> Processing {} Timeframe ..'.format(i))
-                    if raw_data_type == 'daily_candles':
-                        file_names = [f for f in listdir(join(data_dir, 'raw_data', str(day)))]
-                    else:
-                        file_names = [f for f in listdir(join(data_dir, 'raw_data'))]
-                    for file_name in file_names:
-                        print('>> PROCESS MESSAGE >>     Processing {} Currency pair ..'.format(file_name[:6]))
-                        if raw_data_type == 'daily_candles':
-                            df = pd.read_csv(join(data_dir, 'raw_data', str(day), file_name))
-                        else:
-                            df = pd.read_csv(join(data_dir, 'raw_data', file_name))
-                        df = pd.DataFrame({'open':df[open_col].values,
-                                           'high':df[high_col].values,
-                                           'low':df[low_col].values,
-                                           'close':df[close_col].values,
-                                           'tick_volume':df[tick_vol_col].values}, index=pd.to_datetime(df[date_col], format=date_format))
-                        if raw_data_type == 'daily_candles':
-                            idx = pd.date_range(df.index.date[0], freq='min', periods=1440)
-                            df = df.reindex(idx, method='ffill')
-                            df = df.replace(to_replace=np.nan, method='bfill')
-                            df = process_ohlc(df=df, tf=i)
-                        else:
-                            idxs = pd.date_range(df.index.date[0], freq='B', periods=num_days)
-                            idx = pd.date_range(idxs[0], freq='min', periods=1440)
-                            for date in idxs[1:]:
-                                idx = idx.union(pd.date_range(date, freq='min', periods=1440))
-                            df = df.reindex(idx, method='ffill')
-                            df = df.replace(to_replace=np.nan, method='bfill')
-                            df = df.iloc[day*1440:(day+1)*1440]
-                            df = process_ohlc(df=df, tf=i)
-                        df.to_csv(join(data_dir, 'time_frames', str(day), i, file_name[:6]+'_'+i+'.csv'))
-            print('\n>> SYSTEM MESSAGE >> all Days Are Processed Successfully!\n')            
             
-            if app_type == 'all_in_one':
-                print('>> SYSTEM MESSAGE >> Processing Live App Data!')
-                for i in time_frames:
-                    print('\n>> PROCESS MESSAGE >> Processing {} Timeframe ..'.format(i))
-                    file_names = [f for f in listdir(join(data_dir, 'live_data', 'raw_data'))]
+            if raw_data_type == 'daily_candles':
+                for day in range(num_days):
+                    print('-----------------------------------------------------------------------------------------------------------')
+                    print('                                      >> Processing Day {} <<'.format(day))
+                    print('-----------------------------------------------------------------------------------------------------------')
+                    file_names = [f for f in listdir(join(data_dir, 'raw_data', str(day)))]
                     for file_name in file_names:
-                        print('>> PROCESS MESSAGE >>     Processing {} Currency pair ..'.format(file_name[:6]))
-                        df = pd.read_csv(join(data_dir, 'live_data', 'raw_data', file_name))
+                        print('>> PROCESS MESSAGE >> Processing {} Currency pair ..'.format(file_name[:6]))
+                        df = pd.read_csv(join(data_dir, 'raw_data', str(day), file_name))
                         df = pd.DataFrame({'open':df[open_col].values,
                                            'high':df[high_col].values,
                                            'low':df[low_col].values,
@@ -869,9 +836,57 @@ def preprocess(data_dir=None, app_type='', raw_data_type='', raw_data_format={},
                         idx = pd.date_range(df.index.date[0], freq='min', periods=1440)
                         df = df.reindex(idx, method='ffill')
                         df = df.replace(to_replace=np.nan, method='bfill')
-                        df = process_ohlc(df=df, tf=i)
-                        df.to_csv(join(data_dir, 'live_data', 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
-
+                        for i in time_frames:
+                            print('\n>> PROCESS MESSAGE >>     Processing {} Timeframe ..'.format(i))
+                            tf_df = process_ohlc(df=df, tf=i)
+                            tf_df.to_csv(join(data_dir, 'time_frames', str(day), i, file_name[:6]+'_'+i+'.csv'))
+            else:
+                file_names = [f for f in listdir(join(data_dir, 'raw_data'))]
+                for file_name in file_names:
+                    df = pd.read_csv(join(data_dir, 'raw_data', file_name))
+                    df = pd.DataFrame({'open':df[open_col].values,
+                                        'high':df[high_col].values,
+                                        'low':df[low_col].values,
+                                        'close':df[close_col].values,
+                                        'tick_volume':df[tick_vol_col].values}, index=pd.to_datetime(df[date_col], format=date_format))
+                    idxs = pd.date_range(df.index.date[0], freq='B', periods=num_days)
+                    idx = pd.date_range(idxs[0], freq='min', periods=1440)
+                    for date in idxs[1:]:
+                        idx = idx.union(pd.date_range(date, freq='min', periods=1440))
+                    df = df.reindex(idx, method='ffill')
+                    df = df.replace(to_replace=np.nan, method='bfill')
+                    
+                    for day in range(num_days):
+                        print('-----------------------------------------------------------------------------------------------------------')
+                        print('                              >> Processing Data of {} in Day {} <<'.format(file_name[:6], day))
+                        print('-----------------------------------------------------------------------------------------------------------')
+                        daily_df = df.iloc[day*1440:(day+1)*1440]
+                        for i in time_frames:
+                            print('\n>> PROCESS MESSAGE >>     Processing {} Timeframe ..'.format(i))
+                            daily_df = process_ohlc(df=daily_df, tf=i)
+                            daily_df.to_csv(join(data_dir, 'time_frames', str(day), i, file_name[:6]+'_'+i+'.csv'))
+            
+            print('\n>> SYSTEM MESSAGE >> all Days Are Processed Successfully!\n')            
+            
+            if app_type == 'all_in_one':
+                print('>> SYSTEM MESSAGE >> Processing Live App Data!\n')
+                file_names = [f for f in listdir(join(data_dir, 'live_data', 'raw_data'))]
+                for file_name in file_names:
+                    print('>> PROCESS MESSAGE >> Processing {} Currency pair ..'.format(file_name[:6]))
+                    df = pd.read_csv(join(data_dir, 'live_data', 'raw_data', file_name))
+                    df = pd.DataFrame({'open':df[open_col].values,
+                                        'high':df[high_col].values,
+                                        'low':df[low_col].values,
+                                        'close':df[close_col].values,
+                                        'tick_volume':df[tick_vol_col].values}, index=pd.to_datetime(df[date_col], format=date_format))
+                    idx = pd.date_range(df.index.date[0], freq='min', periods=1440)
+                    df = df.reindex(idx, method='ffill')
+                    df = df.replace(to_replace=np.nan, method='bfill')
+                    for i in time_frames:
+                        print('\n>> PROCESS MESSAGE >>     Processing {} Timeframe ..'.format(i))
+                        td_df = process_ohlc(df=df, tf=i)
+                        td_df.to_csv(join(data_dir, 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
+                            
         #############################################################################################################################
 
         elif app_type == 'live_simulator':
@@ -886,22 +901,23 @@ def preprocess(data_dir=None, app_type='', raw_data_type='', raw_data_format={},
                     if x == i:
                         time_frames.append(tf)
             print('>> SYSTEM MESSAGE >> Processing Live App Data!')
-            for i in time_frames:
-                print('\n>> PROCESS MESSAGE >> Processing {} Timeframe ..'.format(i))
-                file_names = [f for f in listdir(join(data_dir, 'raw_data'))]
-                for file_name in file_names:
-                    print('>> PROCESS MESSAGE >>     Processing {} Currency pair ..'.format(file_name[:6]))
-                    df = pd.read_csv(join(data_dir, 'raw_data', file_name))
-                    df = pd.DataFrame({'open':df[open_col].values,
-                                        'high':df[high_col].values,
-                                        'low':df[low_col].values,
-                                        'close':df[close_col].values,
-                                        'tick_volume':df[tick_vol_col].values}, index=pd.to_datetime(df[date_col], format=date_format))
-                    idx = pd.date_range(df.index.date[0], freq='min', periods=1440)
-                    df = df.reindex(idx, method='ffill')
-                    df = df.replace(to_replace=np.nan, method='bfill')
-                    df = process_ohlc(df=df, tf=i)
-                    df.to_csv(join(data_dir, 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
+            
+            file_names = [f for f in listdir(join(data_dir, 'raw_data'))]
+            for file_name in file_names:
+                print('>> PROCESS MESSAGE >> Processing {} Currency pair ..'.format(file_name[:6]))
+                df = pd.read_csv(join(data_dir, 'raw_data', file_name))
+                df = pd.DataFrame({'open':df[open_col].values,
+                                    'high':df[high_col].values,
+                                    'low':df[low_col].values,
+                                    'close':df[close_col].values,
+                                    'tick_volume':df[tick_vol_col].values}, index=pd.to_datetime(df[date_col], format=date_format))
+                idx = pd.date_range(df.index.date[0], freq='min', periods=1440)
+                df = df.reindex(idx, method='ffill')
+                df = df.replace(to_replace=np.nan, method='bfill')
+                for i in time_frames:
+                    print('\n>> PROCESS MESSAGE >>     Processing {} Timeframe ..'.format(i))
+                    td_df = process_ohlc(df=df, tf=i)
+                    td_df.to_csv(join(data_dir, 'time_frames', i, file_name[:6]+'_'+i+'.csv'))
     if save_logs:
         sys.stdout.close()
     return

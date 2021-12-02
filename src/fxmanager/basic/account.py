@@ -179,10 +179,15 @@ class Account():
         else:
             self._margin_level = round(self._equity,4) / round(self._margin,4)
         
-        ## 7 ## Positions
+        # UPDATE OPEN AND CLOSE PRICES TO THE ORIGINAL STATE
+        if base_currency.lower() == self._ACCOUNT_CURRENCY:
+            close_price = 1/close_price
+            open_price = 1/open_price
+
+        #  REMOVE POSITION FROM POSITIONS DICT
         self._positions.pop(ticket)
 
-        return position_profit, margin, close_price
+        return position_profit, margin, open_price, close_price
     
     def update(self, prices, dynamic_sltp=False):
         """
@@ -218,9 +223,9 @@ class Account():
                     self._positions[i]['period'] = 0
                 else:
                     if dynamic_sltp:
-                        if (current_price-SL)/(TP-SL) >= 0.9:
-                            SL = SL + (0.5*(TP-SL))
-                            TP = TP + (0.5*(TP-SL))
+                        if (current_price-SL)/(TP-SL) >= 0.5:
+                            self._positions[i]['SL'] = SL + (0.5*(TP-SL))
+                            self._positions[i]['TP'] = TP + (0.5*(TP-SL))
                         else:
                             pass
             elif order_type == 'sell':
@@ -228,16 +233,14 @@ class Account():
                     self._positions[i]['period'] = 0
                 else:
                     if dynamic_sltp:
-                        if (SL-current_price)/(SL-TP) >= 0.9:
-                            SL = SL - (0.5*(SL-TP))
-                            TP = TP - (0.5*(SL-TP))
+                        if (SL-current_price)/(SL-TP) >= 0.5:
+                            self._positions[i]['SL'] = SL - (0.5*(SL-TP))
+                            self._positions[i]['TP'] = TP - (0.5*(SL-TP))
                         else:
                             pass
                
             if base_currency.lower() == self._ACCOUNT_CURRENCY:
                 current_price = 1/current_price
-                SL = 1/SL
-                TP = 1/TP
             else:
                 pass
 
@@ -259,5 +262,4 @@ class Account():
             self._live_margin_level = self._live_equity / self._margin
         except ZeroDivisionError:
             pass
-
 

@@ -140,7 +140,7 @@ sim.run(account = acc,
         strategy = strategy,
         portfolios = portfolios,
         risk_factor = in_args.risk_factor,
-        dynamic_stlp = in_args.dynamic_sltp,
+        dynamic_sltp = in_args.dynamic_sltp,
         save_logs = in_args.save_logs,
         **kwargs)
 

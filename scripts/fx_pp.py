@@ -5,15 +5,15 @@ This script is used for pre-processing raw market prices data to be compaitable 
 
 This script should be used after running 'setup.py' script. data is organized in the following
 structure:
-    >> 'data\\raw_data\\':
+    >> 'data\\timeframes\\':
         >> '0\\':
             >> '1min\\':
-                >> 'currency_pair_raw_data_file.csv'
-                >> 'other_currency_pair_raw_data_file.csv'
+                >> 'currency_pair_processed_data_file.csv'
+                >> 'other_currency_pair_processed_data_file.csv'
                 >> ...
             >> '2min\\':
-                >> 'currency_pair_raw_data_file.csv'
-                >> 'other_currency_pair_raw_data_file.csv'
+                >> 'currency_pair_processed_data_file.csv'
+                >> 'other_currency_pair_processed_data_file.csv'
                 >> ...
             >> ...
         >> '1\\':
